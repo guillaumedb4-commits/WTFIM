@@ -51,7 +51,9 @@ WTFIM resolves this by making `wtfim:copper_*` the only canonical normal-progres
 
 ### Recipe integration
 
-Standard tools should redirect Overgeared final Copper assembly to:
+**Implemented in source; runtime validation pending.** WTFIM overrides the existing Overgeared recipe IDs `overgeared:copper_sword`, `copper_axe`, `copper_pickaxe`, `copper_shovel`, `copper_hoe`, `copper_helmet`, `copper_chestplate`, `copper_leggings`, and `copper_boots`. The original inputs, patterns, hammering counts, categories, tiers, and recipe serializers are preserved; only the final result IDs change.
+
+Standard tools redirect Overgeared final Copper assembly to:
 
 ```text
 wtfim:copper_sword
@@ -63,7 +65,7 @@ wtfim:copper_hoe
 
 The custom Overgeared shapeless recipe type must be retained so forging-quality and creator data can transfer from the forged part.
 
-Copper armor forging should retain Overgeared's plate costs/patterns while returning:
+Copper armor forging retains Overgeared's exact plate costs/patterns/hammering values while returning:
 
 ```text
 wtfim:copper_helmet
@@ -118,7 +120,7 @@ Canonical WTFIM Copper equipment should recycle through the Overgeared Copper ec
 
 Foundation remains historically correct as an Overgeared-optional smoke-test mod.
 
-Starting with the Copper implementation version, Overgeared **1.21.1-1.6.19+ becomes required for intended WTFIM progression** because canonical Copper acquisition depends on its recipe types, stations, intermediates, and quality system.
+Starting with the Copper manufacturing integration, Overgeared **1.21.1-1.6.19+ is declared as a required BOTH-side dependency**, ordered before WTFIM, because canonical Copper acquisition depends on its recipe types, stations, intermediates, and quality system.
 
 Do not add a direct crafting fallback solely to keep WTFIM standalone.
 
@@ -126,7 +128,7 @@ Overgeared Universal is not part of the Copper integration.
 
 ### Runtime validation required
 
-Static source proves the integration seam, but Copper is not complete until DEV validates:
+Static source now includes the nine standard Copper recipe redirects and required dependency metadata, but Copper is not complete until DEV validates:
 
 - WTFIM outputs appear in Overgeared manufacturing;
 - quality and creator data survive standard tool assembly;
@@ -140,3 +142,8 @@ Static source proves the integration seam, but Copper is not complete until DEV 
 - no new WTFIM/Overgeared errors appear beyond Foundation baseline.
 
 See `COPPER_AUDIT.md`.
+
+
+## Current manufacturing boundary
+
+The first manufacturing commit intentionally stops at the nine standard Matcha/Overgeared-overlap pieces. It does **not** yet implement Copper Shears forging, villager trade replacement, EMI hiding, recycling redirects, or advancements. Those remain separate boundaries so failures can be isolated.

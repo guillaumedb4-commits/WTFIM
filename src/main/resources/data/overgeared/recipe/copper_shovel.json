@@ -1,0 +1,9 @@
+{
+  "type": "overgeared:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    { "item": "overgeared:copper_shovel_head" },
+    { "item": "minecraft:stick" }
+  ],
+  "result": { "count": 1, "id": "wtfim:copper_shovel" }
+}

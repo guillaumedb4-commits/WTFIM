@@ -1,0 +1,18 @@
+{
+  "type": "overgeared:forging",
+  "category": "ARMORS",
+  "hammering": 4,
+  "has_polishing": false,
+  "key": {
+    "#": { "item": "overgeared:copper_plate" }
+  },
+  "need_quenching": false,
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "result": { "count": 1, "id": "wtfim:copper_leggings" },
+  "show_notification": false,
+  "tier": "stone"
+}

@@ -10,7 +10,7 @@ authors="WTFIM Project"
 description='''
 A clean NeoForge rebuild inspired by Matcha Flavoured, designed around explicit progression and Overgeared compatibility.
 
-0.1.0-alpha is Foundation only: registry, assets, metadata, and a disposable smoke-test item.
+The Copper vertical slice is in active development on top of the validated 0.1.0-alpha Foundation.
 '''
 
 [[dependencies.wtfim]]
@@ -25,4 +25,11 @@ modId="minecraft"
 type="required"
 versionRange="[1.21.1,1.21.2)"
 ordering="NONE"
+side="BOTH"
+
+[[dependencies.wtfim]]
+modId="overgeared"
+type="required"
+versionRange="[1.21.1-1.6.19,)"
+ordering="AFTER"
 side="BOTH"

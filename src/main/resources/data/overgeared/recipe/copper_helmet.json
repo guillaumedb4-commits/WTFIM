@@ -1,0 +1,17 @@
+{
+  "type": "overgeared:forging",
+  "category": "ARMORS",
+  "hammering": 3,
+  "has_polishing": false,
+  "key": {
+    "#": { "item": "overgeared:copper_plate" }
+  },
+  "need_quenching": false,
+  "pattern": [
+    "###",
+    "# #"
+  ],
+  "result": { "count": 1, "id": "wtfim:copper_helmet" },
+  "show_notification": false,
+  "tier": "stone"
+}

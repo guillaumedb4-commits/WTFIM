@@ -104,7 +104,7 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 - [x] `./gradlew build` succeeds with Copper registration. (Operator validation, 2026-10-06: `BUILD SUCCESSFUL`, 5 tasks executed.)
 - [x] All ten canonical `wtfim:copper_*` IDs register at runtime. (`/give` verified for all ten in WTFIM-DEV, 2026-10-06.)
 - [x] No unintended WTFIM Copper IDs observed during registration validation.
-- [ ] Overgeared required dependency metadata is correct once manufacturing integration lands.
+- [x] Source declares Overgeared `1.21.1-1.6.19+` as required/BOTH and orders WTFIM AFTER Overgeared. Runtime metadata/version-range validation remains part of the next DEV test.
 - [ ] `wtfim:test_item` removal/retention is intentional and documented at each boundary.
 
 #### Assets / language
@@ -147,6 +147,16 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 
 #### Overgeared manufacturing
 
+Static manufacturing redirect status:
+
+- [x] Existing Overgeared recipe IDs are overridden rather than duplicated.
+- [x] Five tool assembly recipes retain `overgeared:crafting_shapeless`, original forged-part inputs, and stick inputs; only result IDs change to `wtfim:`.
+- [x] Four armor recipes retain `overgeared:forging`, original Copper Plate patterns, hammering counts, Stone tier, no quenching, and no polishing; only result IDs change to `wtfim:`.
+- [x] Copper Shears manufacturing is intentionally absent from this commit.
+- [x] No Matcha-style shaped fallback recipe is added.
+
+Runtime manufacturing checks:
+
 - [ ] Heating path is visible and functional.
 - [ ] Sword blade -> `wtfim:copper_sword` works.
 - [ ] Axe head -> `wtfim:copper_axe` works.
@@ -156,7 +166,7 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 - [ ] Plate forging -> all four WTFIM armor pieces works.
 - [ ] Copper Shears forge from two heated Copper Ingots.
 - [ ] Copper Shears initial three-hammering design feels acceptable.
-- [ ] No direct shaped Copper equipment recipes exist.
+- [ ] No direct shaped Copper equipment recipes exist at runtime.
 
 #### Forging quality
 
