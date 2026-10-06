@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="wtfim"
+version="0.1.0-alpha"
+displayName="What the Fuck Is Matcha?"
+authors="WTFIM Project"
+description='''
+A clean NeoForge rebuild inspired by Matcha Flavoured, designed around explicit progression and Overgeared compatibility.
+
+0.1.0-alpha is Foundation only: registry, assets, metadata, and a disposable smoke-test item.
+'''
+
+[[dependencies.wtfim]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.251,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.wtfim]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
