@@ -95,7 +95,7 @@ The broader stat/mining/quality/manufacturing checks below remain intentionally 
 - [x] Vanilla tool/armor-slot/trimmable/enchantable tags mirror the audited Matcha core Copper tag membership using `wtfim:` IDs.
 - [x] No global `minecraft:` model/texture override was introduced.
 
-Runtime asset/tag validation below remains unchecked until the rebuilt JAR is tested in WTFIM-DEV.
+Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper names, item textures, equipped armor rendering, save/reload persistence, and EMI visibility were reported working. Tag-specific enchantment/trim behavior remains covered by later focused checks.
 
 ### Implementation/runtime checklist
 
@@ -109,11 +109,11 @@ Runtime asset/tag validation below remains unchecked until the rebuilt JAR is te
 
 #### Assets / language
 
-- [ ] All ten canonical items have models.
-- [ ] All required item/armor textures resolve.
-- [ ] All ten canonical items have English translations.
-- [ ] No broken/missing translation keys.
-- [ ] No global vanilla Copper resource overrides are required.
+- [x] All ten canonical items have models. (WTFIM-DEV runtime validation, 2026-10-06.)
+- [x] All required item/armor textures resolve. (WTFIM-DEV runtime validation, 2026-10-06.)
+- [x] All ten canonical items have English translations. (WTFIM-DEV runtime validation, 2026-10-06.)
+- [x] No broken/missing Copper translation keys observed in WTFIM-DEV.
+- [x] No global vanilla Copper resource overrides are required.
 
 #### Tool / armor behavior
 
@@ -126,7 +126,7 @@ Runtime asset/tag validation below remains unchecked until the rebuilt JAR is te
 - [ ] Shovel = 3.5 damage / 1.0 speed baseline.
 - [ ] Hoe = 1 damage / 2.0 speed baseline.
 - [ ] Copper Shears durability = 300.
-- [x] Copper Shears perform shearing behavior. **Open:** compare breaking/shearing speed against vanilla Shears; operator reported they feel slow.
+- [x] Copper Shears perform shearing behavior. Vanilla comparison was acceptable to the operator; no speed change is required.
 - [ ] Copper repair uses Copper Ingots.
 - [ ] Helmet = armor 2 / durability 200.
 - [ ] Chestplate = armor 4 / durability 200.
@@ -182,7 +182,7 @@ Runtime asset/tag validation below remains unchecked until the rebuilt JAR is te
 
 #### EMI / discoverability
 
-- [ ] EMI indexes all ten WTFIM Copper items.
+- [x] EMI indexes the canonical WTFIM Copper items in the presentation-validation build.
 - [ ] EMI shows heating -> forging -> assembly/armor-forging progression.
 - [ ] EMI shows canonical WTFIM outputs for final Copper equipment.
 - [ ] Duplicate finished Overgeared Copper items are hidden where feasible.

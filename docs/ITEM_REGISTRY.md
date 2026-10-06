@@ -12,16 +12,16 @@ The first Copper implementation commit defines these ten canonical final equipme
 
 | ID | Status | Role |
 | --- | --- | --- |
-| `wtfim:copper_sword` | Registered / DEV registration validated | Standard Copper weapon |
-| `wtfim:copper_axe` | Registered / DEV registration validated | Copper axe |
-| `wtfim:copper_pickaxe` | Registered / DEV registration validated | Copper pickaxe |
-| `wtfim:copper_shovel` | Registered / DEV registration validated | Copper shovel |
-| `wtfim:copper_hoe` | Registered / DEV registration validated | Copper hoe |
-| `wtfim:copper_shears` | Registered / DEV registration validated | Repairable Copper shears |
-| `wtfim:copper_helmet` | Registered / DEV registration validated | Copper helmet |
-| `wtfim:copper_chestplate` | Registered / DEV registration validated | Copper chestplate |
-| `wtfim:copper_leggings` | Registered / DEV registration validated | Copper leggings |
-| `wtfim:copper_boots` | Registered / DEV registration validated | Copper boots |
+| `wtfim:copper_sword` | Registered / DEV presentation validated | Standard Copper weapon |
+| `wtfim:copper_axe` | Registered / DEV presentation validated | Copper axe |
+| `wtfim:copper_pickaxe` | Registered / DEV presentation validated | Copper pickaxe |
+| `wtfim:copper_shovel` | Registered / DEV presentation validated | Copper shovel |
+| `wtfim:copper_hoe` | Registered / DEV presentation validated | Copper hoe |
+| `wtfim:copper_shears` | Registered / DEV presentation validated | Repairable Copper shears |
+| `wtfim:copper_helmet` | Registered / DEV presentation validated | Copper helmet |
+| `wtfim:copper_chestplate` | Registered / DEV presentation validated | Copper chestplate |
+| `wtfim:copper_leggings` | Registered / DEV presentation validated | Copper leggings |
+| `wtfim:copper_boots` | Registered / DEV presentation validated | Copper boots |
 
 Supporting source now defines:
 
