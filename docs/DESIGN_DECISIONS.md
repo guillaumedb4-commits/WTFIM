@@ -128,3 +128,42 @@ Starting with the Copper implementation version, Overgeared 1.21.1-1.6.19+ is a 
 - Shakudo/Hepatizon remain out of scope for this slice.
 
 See `docs/COPPER_AUDIT.md` for the full source audit and conflict analysis.
+
+
+## ADR-004 — Suppress duplicate Overgeared Copper villager offers
+
+**Status:** Accepted — 2026-10-06
+
+### Context
+
+Overgeared 1.21.1-1.6.19 adds both useful forged Copper intermediates and its obsolete finished Copper equipment to Weaponsmith, Toolsmith, and Armorer trade pools. WTFIM redirects standard manufacturing to canonical `wtfim:copper_*` outputs, so allowing villagers to continue selling finished `overgeared:copper_*` gear would preserve a second normal survival route and bypass WTFIM's canonical Copper progression.
+
+Removing all Overgeared Copper trades is not acceptable because useful Copper blades and tool heads must remain available.
+
+### Decision
+
+WTFIM listens to NeoForge's `VillagerTradesEvent` at `LOWEST` priority so Overgeared has already populated and wrapped its trade factories.
+
+For Weaponsmith, Toolsmith, and Armorer pools, WTFIM wraps the finalized `VillagerTrades.ItemListing` entries. At offer-generation time, the wrapper delegates to the original listing and suppresses the offer only when its result is one of the nine obsolete finished IDs:
+
+- `overgeared:copper_sword`
+- `overgeared:copper_axe`
+- `overgeared:copper_pickaxe`
+- `overgeared:copper_shovel`
+- `overgeared:copper_hoe`
+- `overgeared:copper_helmet`
+- `overgeared:copper_chestplate`
+- `overgeared:copper_leggings`
+- `overgeared:copper_boots`
+
+No reflection, mixin, or direct reference to Overgeared implementation classes is used.
+
+Finished Overgeared Copper offers are **removed**, not replaced with WTFIM finished gear. Villagers must not become a bypass around Overgeared forging.
+
+### Consequences
+
+- Useful Overgeared Copper heads/blades/plates and unrelated trades remain intact.
+- New villager offer generation should not expose finished `overgeared:copper_*` equipment.
+- Existing villagers that already persisted obsolete offers are not migrated by this boundary.
+- Creative-tab and EMI visibility of registered Overgeared items is a separate cleanup concern and does not by itself constitute a survival progression route.
+- The filter must be runtime-tested against Weaponsmith, Toolsmith, and Armorer while confirming useful Copper intermediate trades still appear.

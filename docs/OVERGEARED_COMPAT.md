@@ -102,6 +102,12 @@ Instead, the Copper compatibility layer must ensure they do not remain a second 
 
 A surviving ordinary recipe/trade path to the duplicate finished family is a Copper-slice failure.
 
+### Villager trade suppression
+
+**Implemented in source; runtime validation pending.** WTFIM registers a LOWEST-priority `VillagerTradesEvent` compatibility filter after Overgeared's normal trade population. The filter delegates to every smithing-profession trade factory and returns `null` only when the generated result is one of the nine obsolete finished `overgeared:copper_*` items.
+
+This intentionally preserves useful Copper sword blades/tool heads and unrelated Overgeared trades. It uses only vanilla/NeoForge trade interfaces: no reflection, mixin, or direct compile-time dependency on Overgeared classes. Existing villagers with already-saved obsolete offers are outside this boundary.
+
 DEV validation confirmed the standard recipe paths now end in `wtfim:copper_*`. The old Overgeared finished Copper items are still visible in Overgeared's Creative tab and EMI index because Overgeared explicitly registers/displays them. Visibility alone is not a progression route. Creative/EMI hiding remains a separate compatibility-cleanup task; villager trades remain the more important survival-route blocker.
 
 ### Mining gate
@@ -148,4 +154,4 @@ See `COPPER_AUDIT.md`.
 
 ## Current manufacturing boundary
 
-The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging is now implemented as a separate boundary. Villager trade replacement, Creative/EMI hiding, recycling redirects, and advancements remain separate so failures can be isolated.
+The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging is implemented as a separate boundary. Finished-Copper villager trade suppression is now implemented in source under ADR-004. Creative/EMI hiding, recycling redirects, and advancements remain separate so failures can be isolated.

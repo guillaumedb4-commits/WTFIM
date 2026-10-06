@@ -193,8 +193,22 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 
 #### Duplicate-route suppression
 
+Trade-filter source status:
+
+- [x] LOWEST-priority `VillagerTradesEvent` handler is registered on the NeoForge game event bus.
+- [x] Handler targets Weaponsmith, Toolsmith, and Armorer only.
+- [x] Trade factories are wrapped after Overgeared rather than inspected through reflection.
+- [x] Only the nine finished `overgeared:copper_*` result IDs are suppressed.
+- [x] Useful Copper heads/blades/plates are not ID-blocked.
+- [x] Finished duplicate trades are removed rather than redirected to WTFIM finished gear.
+- [x] Existing persisted villager offers are intentionally not migrated in this boundary.
+- [ ] Fresh Weaponsmith does not generate `overgeared:copper_sword`.
+- [ ] Fresh Toolsmith does not generate finished Overgeared Copper tools.
+- [ ] Fresh Armorer does not generate finished Overgeared Copper armor.
+- [ ] Useful Copper head/blade trades still generate.
+
 - [x] Standard Copper manufacturing recipes no longer produce finished `overgeared:copper_*` gear.
-- [ ] Smithing-profession trades do not provide finished duplicate Overgeared Copper gear.
+- [ ] Smithing-profession trades do not provide finished duplicate Overgeared Copper gear. **Source filter implemented; runtime validation pending.**
 - [ ] Useful heads/blades/plates remain available only where intentionally retained.
 - [ ] No other installed DEV datapack restores a duplicate finished Copper route.
 
