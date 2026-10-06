@@ -104,9 +104,11 @@ A surviving ordinary recipe/trade path to the duplicate finished family is a Cop
 
 ### Villager trade suppression
 
-**Implemented in source; runtime validation pending.** WTFIM registers a LOWEST-priority `VillagerTradesEvent` compatibility filter after Overgeared's normal trade population. The filter delegates to every smithing-profession trade factory and returns `null` only when the generated result is one of the nine obsolete finished `overgeared:copper_*` items.
+**Implemented in source; second runtime validation pending.** WTFIM explicitly registers a LOWEST-priority `VillagerTradesEvent` listener with `NeoForge.EVENT_BUS.addListener(...)` after Overgeared's normal trade population. The filter delegates to every smithing-profession trade factory and returns `null` only when the generated result is one of the nine obsolete finished `overgeared:copper_*` items.
 
 This intentionally preserves useful Copper sword blades/tool heads and unrelated Overgeared trades. It uses only vanilla/NeoForge trade interfaces: no reflection, mixin, or direct compile-time dependency on Overgeared classes. Existing villagers with already-saved obsolete offers are outside this boundary.
+
+The first DEV attempt using annotation scanning via `EVENT_BUS.register(Class)` did not suppress a fresh Toolsmith's finished Copper Axe offer, while legitimate head trades remained present. Registration was therefore made explicit with `addListener`, and temporary INFO diagnostics now prove whether the handler runs and which obsolete results it suppresses.
 
 DEV validation confirmed the standard recipe paths now end in `wtfim:copper_*`. The old Overgeared finished Copper items are still visible in Overgeared's Creative tab and EMI index because Overgeared explicitly registers/displays them. Visibility alone is not a progression route. Creative/EMI hiding remains a separate compatibility-cleanup task; villager trades remain the more important survival-route blocker.
 

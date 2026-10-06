@@ -3,12 +3,11 @@ package dev.wtfim.compat;
 import java.util.List;
 import java.util.Set;
 
+import dev.wtfim.WTFIM;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 
 public final class OvergearedTradeCompat {
@@ -27,12 +26,12 @@ public final class OvergearedTradeCompat {
     private OvergearedTradeCompat() {
     }
 
-    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onVillagerTrades(VillagerTradesEvent event) {
         if (!isSmithingProfession(event.getType())) {
             return;
         }
 
+        int wrapped = 0;
         for (int level = 1; level <= 5; level++) {
             List<VillagerTrades.ItemListing> trades = event.getTrades().get(level);
             if (trades == null || trades.isEmpty()) {
@@ -42,8 +41,11 @@ public final class OvergearedTradeCompat {
             for (int index = 0; index < trades.size(); index++) {
                 VillagerTrades.ItemListing original = trades.get(index);
                 trades.set(index, (trader, random) -> filterOffer(original.getOffer(trader, random)));
+                wrapped++;
             }
         }
+
+        WTFIM.LOGGER.info("Installed Copper finished-trade filter for {} ({} listings wrapped)", event.getType(), wrapped);
     }
 
     private static boolean isSmithingProfession(VillagerProfession profession) {
@@ -58,6 +60,11 @@ public final class OvergearedTradeCompat {
         }
 
         String resultId = BuiltInRegistries.ITEM.getKey(offer.getResult().getItem()).toString();
-        return BLOCKED_FINISHED_COPPER_IDS.contains(resultId) ? null : offer;
+        if (BLOCKED_FINISHED_COPPER_IDS.contains(resultId)) {
+            WTFIM.LOGGER.info("Suppressed obsolete finished Copper villager offer: {}", resultId);
+            return null;
+        }
+
+        return offer;
     }
 }

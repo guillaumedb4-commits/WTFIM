@@ -195,7 +195,9 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 
 Trade-filter source status:
 
-- [x] LOWEST-priority `VillagerTradesEvent` handler is registered on the NeoForge game event bus.
+Runtime note: the first annotation/class-registration implementation did not suppress a fresh Toolsmith's `overgeared:copper_axe` offer. The filtering logic is retained, but registration is now explicit through `NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, VillagerTradesEvent.class, ...)`. INFO diagnostics are emitted both when each smithing-profession pool is wrapped and when an obsolete finished Copper offer is suppressed.
+
+- [x] LOWEST-priority `VillagerTradesEvent` handler is registered explicitly with `NeoForge.EVENT_BUS.addListener(...)`.
 - [x] Handler targets Weaponsmith, Toolsmith, and Armorer only.
 - [x] Trade factories are wrapped after Overgeared rather than inspected through reflection.
 - [x] Only the nine finished `overgeared:copper_*` result IDs are suppressed.
@@ -203,9 +205,9 @@ Trade-filter source status:
 - [x] Finished duplicate trades are removed rather than redirected to WTFIM finished gear.
 - [x] Existing persisted villager offers are intentionally not migrated in this boundary.
 - [ ] Fresh Weaponsmith does not generate `overgeared:copper_sword`.
-- [ ] Fresh Toolsmith does not generate finished Overgeared Copper tools.
+- [ ] Fresh Toolsmith does not generate finished Overgeared Copper tools. **First runtime attempt failed: a fresh Toolsmith still sold `overgeared:copper_axe`; explicit listener registration is the current fix under test.**
 - [ ] Fresh Armorer does not generate finished Overgeared Copper armor.
-- [ ] Useful Copper head/blade trades still generate.
+- [x] Useful Copper head/blade trades still generate. (Runtime observed Copper Axe Head / Copper Shovel Head offers.)
 
 - [x] Standard Copper manufacturing recipes no longer produce finished `overgeared:copper_*` gear.
 - [ ] Smithing-profession trades do not provide finished duplicate Overgeared Copper gear. **Source filter implemented; runtime validation pending.**
