@@ -26,4 +26,4 @@ Expected artifact:
 build/libs/wtfim-0.1.0-alpha.jar
 ```
 
-See `docs/TEST_MATRIX.md` before tagging `v0.1.0-alpha`.
+Foundation validation passed on 2026-10-06. The local baseline is tagged `v0.1.0-alpha`; see `docs/TEST_MATRIX.md` for the recorded validation evidence.
