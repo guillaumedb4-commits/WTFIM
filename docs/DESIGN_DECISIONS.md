@@ -50,3 +50,81 @@ Known Overgeared 1.6.19 recipe/EMI log errors are treated as external baseline n
 ### Consequence
 
 `v0.1.0-alpha` is the baseline tag. Gameplay work starts after this point in vertical slices, beginning with Copper; Foundation-only behavior should remain reproducible from the tag.
+
+## ADR-003 — Canonical Copper Equipment and Overgeared Manufacturing
+
+**Status:** Accepted — 2026-10-06
+
+### Context
+
+The exact Matcha 1.21.1 backport and Overgeared 1.21.1-1.6.19 both define full Copper equipment families, but with separate registry IDs, stats, recipes, mining gates, and player-facing progression.
+
+Leaving both final families active would create duplicate Copper progression and recipe-viewer confusion. Reproducing Matcha's ordinary shaped Copper recipes would also bypass Overgeared's intended craftsmanship.
+
+The source audit additionally confirmed that Overgeared's custom final-tool assembly copies forging-quality and creator data from forged parts, and its forging recipes can produce non-`overgeared` outputs. This gives WTFIM a clean integration seam without reimplementing Overgeared's craftsmanship system.
+
+### Decision
+
+WTFIM registers the canonical ten-item Copper equipment family:
+
+- `wtfim:copper_sword`
+- `wtfim:copper_axe`
+- `wtfim:copper_pickaxe`
+- `wtfim:copper_shovel`
+- `wtfim:copper_hoe`
+- `wtfim:copper_shears`
+- `wtfim:copper_helmet`
+- `wtfim:copper_chestplate`
+- `wtfim:copper_leggings`
+- `wtfim:copper_boots`
+
+WTFIM preserves the audited Matcha core base stats and visual identity for those items, except that Copper harvest gating follows Overgeared's progression boundary rather than Matcha's more permissive incorrect-block tag.
+
+Overgeared owns the Copper manufacturing path:
+
+```text
+Copper acquisition
+-> heating
+-> blueprints + forged heads/blades/plates
+-> assembly / armor forging
+-> canonical wtfim:copper_* equipment
+```
+
+The five standard tools remain Overgeared custom-assembly outputs so forging-quality and creator data can transfer from forged parts. The four armor pieces remain Overgeared forging outputs using Copper Plates and existing material costs.
+
+Copper Shears are a WTFIM addition because Overgeared has no Copper Shears. They will be forged from two heated Copper Ingots, initially targeting three hammering actions, and will not use forging quality.
+
+Matcha's direct shaped Copper equipment recipes are not reproduced.
+
+Canonical Copper equipment recycling follows Overgeared's economy and returns one `overgeared:copper_nugget`, not Matcha's one-Ingot return.
+
+Overgeared's nine finished `overgeared:copper_*` items remain registered for compatibility but are excluded from normal WTFIM survival progression. Compatibility must redirect final recipes, prevent ordinary smithing-profession trade leakage, and hide the obsolete final family from EMI where feasible.
+
+Starting with the Copper implementation version, Overgeared 1.21.1-1.6.19+ is a required runtime dependency for intended WTFIM progression.
+
+### Matcha Copper classification
+
+- Standard Copper tools: **KEEP**, rebuilt as `wtfim:` items.
+- Copper armor: **KEEP**, rebuilt as `wtfim:` items.
+- Copper Shears: **KEEP**, rebuilt as a forged `wtfim:` item.
+- Matcha Copper stats: **KEEP**, except mining gate.
+- Direct shaped Copper gear crafting: **DROP**.
+- One-Ingot Copper equipment recycling: **CHANGE**.
+- Matcha Copper harvest gate: **CHANGE** to Overgeared progression.
+- Copper Compass: **DEFER**.
+- Copper Dolabra: **DEFER**.
+- Copper Mattock: **DEFER**.
+- Dormant Matcha Copper equipment loot: **DROP** from the base Copper acquisition design.
+- Legacy CMD/carrier architecture: **DROP**.
+- Oxidation variants/mechanics: **DEFER**.
+
+### Consequences
+
+- WTFIM owns final Copper identity, stats, assets, repair behavior, and progression teaching.
+- Overgeared owns heating, blueprints, parts, plates, forging, assembly, and quality.
+- The normal survival graph must expose only one final Copper equipment family.
+- No easy fallback crafting path is added when Overgeared is present.
+- Copper implementation must runtime-test quality propagation, EMI presentation, villager trades, mining gates, recycling, and duplicate-route suppression.
+- Shakudo/Hepatizon remain out of scope for this slice.
+
+See `docs/COPPER_AUDIT.md` for the full source audit and conflict analysis.
