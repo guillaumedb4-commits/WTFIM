@@ -157,20 +157,23 @@ Static manufacturing redirect status:
 
 Runtime manufacturing checks:
 
-- [ ] Heating path is visible and functional.
-- [ ] Sword blade -> `wtfim:copper_sword` works.
-- [ ] Axe head -> `wtfim:copper_axe` works.
-- [ ] Pickaxe head -> `wtfim:copper_pickaxe` works.
-- [ ] Shovel head -> `wtfim:copper_shovel` works.
-- [ ] Hoe head -> `wtfim:copper_hoe` works.
-- [ ] Plate forging -> all four WTFIM armor pieces works.
+Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard tools and four armor pieces. The operator confirmed the redirected outputs and quality-bearing tool assembly work. The obsolete Overgeared finished Copper items remain registered and are still visible in Creative/EMI; that is **not** evidence of a duplicate recipe, and visibility cleanup remains a separate task.
+
+
+- [x] Heating path is visible and functional in WTFIM-DEV.
+- [x] Sword blade -> `wtfim:copper_sword` works.
+- [x] Axe head -> `wtfim:copper_axe` works.
+- [x] Pickaxe head -> `wtfim:copper_pickaxe` works.
+- [x] Shovel head -> `wtfim:copper_shovel` works.
+- [x] Hoe head -> `wtfim:copper_hoe` works.
+- [x] Plate forging -> all four WTFIM armor pieces works.
 - [ ] Copper Shears forge from two heated Copper Ingots.
 - [ ] Copper Shears initial three-hammering design feels acceptable.
-- [ ] No direct shaped Copper equipment recipes exist at runtime.
+- [x] No Matcha-style direct shaped Copper equipment recipes observed at runtime.
 
 #### Forging quality
 
-- [ ] Tool quality component transfers through Overgeared custom assembly.
+- [x] Tool quality component survives Overgeared custom assembly onto the canonical WTFIM tool.
 - [ ] Creator component transfers where expected.
 - [ ] Quality attribute modifiers apply correctly to WTFIM tools.
 - [ ] Quality attribute modifiers apply correctly to WTFIM armor.
@@ -179,7 +182,7 @@ Runtime manufacturing checks:
 
 #### Duplicate-route suppression
 
-- [ ] No normal recipe produces finished `overgeared:copper_*` gear.
+- [x] Standard Copper manufacturing recipes no longer produce finished `overgeared:copper_*` gear.
 - [ ] Smithing-profession trades do not provide finished duplicate Overgeared Copper gear.
 - [ ] Useful heads/blades/plates remain available only where intentionally retained.
 - [ ] No other installed DEV datapack restores a duplicate finished Copper route.
@@ -193,18 +196,18 @@ Runtime manufacturing checks:
 #### EMI / discoverability
 
 - [x] EMI indexes the canonical WTFIM Copper items in the presentation-validation build.
-- [ ] EMI shows heating -> forging -> assembly/armor-forging progression.
-- [ ] EMI shows canonical WTFIM outputs for final Copper equipment.
+- [x] EMI shows the Overgeared Copper manufacturing chain with canonical WTFIM final outputs.
+- [x] EMI shows canonical WTFIM outputs for final Copper equipment.
 - [ ] Duplicate finished Overgeared Copper items are hidden where feasible.
-- [ ] No Matcha-style direct Copper gear recipe appears.
+- [x] No Matcha-style direct Copper gear recipe appears.
 - [ ] Copper progression advancement triggers as designed.
 
 #### Persistence / logs / environments
 
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [ ] Forging quality survives save/reload.
-- [x] No new Copper-registration crash/registry errors in `latest.log`. Expected missing WTFIM Copper model/armor-texture warnings are present because assets are the next unimplemented boundary; existing Overgeared recipe noise remains.
-- [ ] Clean WTFIM-DEV passes.
+- [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
+- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing boundary passed; Shears/trades/recycling/cleanup remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
 

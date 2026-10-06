@@ -11,7 +11,7 @@ The audited Matcha feature matrix remains the source reference for later KEEP / 
 | Copper mining gate | CHANGE | Copper tier now points at `wtfim:incorrect_for_copper_tool`, containing vanilla Iron/Diamond requirements plus optional `#overgeared:needs_steel_tool`. Runtime validation remains. |
 | Copper recycling | CHANGE | Planned Overgeared-aligned one-Copper-Nugget return; not implemented yet. |
 | Copper forging quality | KEEP FROM OVERGEARED | Standard recipes now retain Overgeared `crafting_shapeless` / `forging` serializers; runtime quality/creator propagation remains unvalidated. |
-| Duplicate Overgeared final Copper gear | DROP FROM NORMAL PROGRESSION | Registry IDs remain. The nine standard final recipe IDs are redirected in source; villager-trade suppression and EMI hiding remain pending. |
+| Duplicate Overgeared final Copper gear | DROP FROM NORMAL PROGRESSION | Registry IDs remain. The nine standard final recipes are redirected and DEV-validated. Old Overgeared finished items are still visible in Creative/EMI; villager-trade suppression and visibility cleanup remain pending. |
 | Copper Shears | KEEP / CHANGE | `wtfim:copper_shears` registered in source with 300 durability and Copper-Ingot repair; manufacturing still pending. |
 | Copper Compass | DEFER | Valid Matcha exploration utility, but outside the core equipment slice. |
 | Copper Dolabra | DEFER | Registered in Matcha but no normal v19 acquisition; audit separately with special tools. |

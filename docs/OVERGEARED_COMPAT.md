@@ -51,7 +51,7 @@ WTFIM resolves this by making `wtfim:copper_*` the only canonical normal-progres
 
 ### Recipe integration
 
-**Implemented in source; runtime validation pending.** WTFIM overrides the existing Overgeared recipe IDs `overgeared:copper_sword`, `copper_axe`, `copper_pickaxe`, `copper_shovel`, `copper_hoe`, `copper_helmet`, `copper_chestplate`, `copper_leggings`, and `copper_boots`. The original inputs, patterns, hammering counts, categories, tiers, and recipe serializers are preserved; only the final result IDs change.
+**Implemented and DEV runtime-validated.** WTFIM overrides the existing Overgeared recipe IDs `overgeared:copper_sword`, `copper_axe`, `copper_pickaxe`, `copper_shovel`, `copper_hoe`, `copper_helmet`, `copper_chestplate`, `copper_leggings`, and `copper_boots`. The original inputs, patterns, hammering counts, categories, tiers, and recipe serializers are preserved; only the final result IDs change.
 
 Standard tools redirect Overgeared final Copper assembly to:
 
@@ -102,6 +102,8 @@ Instead, the Copper compatibility layer must ensure they do not remain a second 
 
 A surviving ordinary recipe/trade path to the duplicate finished family is a Copper-slice failure.
 
+DEV validation confirmed the standard recipe paths now end in `wtfim:copper_*`. The old Overgeared finished Copper items are still visible in Overgeared's Creative tab and EMI index because Overgeared explicitly registers/displays them. Visibility alone is not a progression route. Creative/EMI hiding remains a separate compatibility-cleanup task; villager trades remain the more important survival-route blocker.
+
 ### Mining gate
 
 WTFIM Copper must treat these as incorrect:
@@ -128,7 +130,7 @@ Overgeared Universal is not part of the Copper integration.
 
 ### Runtime validation required
 
-Static source now includes the nine standard Copper recipe redirects and required dependency metadata, but Copper is not complete until DEV validates:
+The nine standard Copper recipe redirects and required dependency metadata are now DEV runtime-validated. Copper is still not complete until the remaining checks are finished:
 
 - WTFIM outputs appear in Overgeared manufacturing;
 - quality and creator data survive standard tool assembly;
