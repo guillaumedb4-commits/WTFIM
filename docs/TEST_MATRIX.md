@@ -82,15 +82,17 @@ These are recorded as **external baseline noise**, not as Foundation failures. D
 - [x] No Copper manufacturing/acquisition recipes were added in the registration commit.
 - [x] `wtfim:test_item` is intentionally retained until real Copper runtime/resource smoke coverage passes.
 
-These are source-review facts only. The actual Gradle build and runtime checks below remain unchecked.
+Registration validation completed in WTFIM-DEV on 2026-10-06. The build passed, all ten IDs resolved, armor equipped, Copper Shears sheared successfully, items persisted across save/reload, and the game did not crash. The uploaded log shows WTFIM initialized and only the expected missing Copper asset warnings for WTFIM at this stage.
+
+The broader stat/mining/quality/manufacturing checks below remain intentionally unchecked.
 
 ### Implementation/runtime checklist
 
 #### Build / registry
 
-- [ ] `./gradlew build` succeeds with Copper registration.
-- [ ] All ten canonical `wtfim:copper_*` IDs register at runtime.
-- [ ] No unintended Copper IDs are registered.
+- [x] `./gradlew build` succeeds with Copper registration. (Operator validation, 2026-10-06: `BUILD SUCCESSFUL`, 5 tasks executed.)
+- [x] All ten canonical `wtfim:copper_*` IDs register at runtime. (`/give` verified for all ten in WTFIM-DEV, 2026-10-06.)
+- [x] No unintended WTFIM Copper IDs observed during registration validation.
 - [ ] Overgeared required dependency metadata is correct once manufacturing integration lands.
 - [ ] `wtfim:test_item` removal/retention is intentional and documented at each boundary.
 
@@ -113,7 +115,7 @@ These are source-review facts only. The actual Gradle build and runtime checks b
 - [ ] Shovel = 3.5 damage / 1.0 speed baseline.
 - [ ] Hoe = 1 damage / 2.0 speed baseline.
 - [ ] Copper Shears durability = 300.
-- [ ] Copper Shears behave as shears.
+- [x] Copper Shears perform shearing behavior. **Open:** compare breaking/shearing speed against vanilla Shears; operator reported they feel slow.
 - [ ] Copper repair uses Copper Ingots.
 - [ ] Helmet = armor 2 / durability 200.
 - [ ] Chestplate = armor 4 / durability 200.
@@ -178,9 +180,9 @@ These are source-review facts only. The actual Gradle build and runtime checks b
 
 #### Persistence / logs / environments
 
-- [ ] Copper items survive save/reload.
+- [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [ ] Forging quality survives save/reload.
-- [ ] No new relevant `latest.log` errors beyond documented Overgeared baseline.
+- [x] No new Copper-registration crash/registry errors in `latest.log`. Expected missing WTFIM Copper model/armor-texture warnings are present because assets are the next unimplemented boundary; existing Overgeared recipe noise remains.
 - [ ] Clean WTFIM-DEV passes.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.

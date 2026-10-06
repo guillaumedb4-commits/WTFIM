@@ -8,20 +8,20 @@
 
 ## Copper — canonical registry
 
-The first Copper implementation commit defines these ten canonical final equipment IDs in source.
+The first Copper implementation commit defines these ten canonical final equipment IDs in source. DEV registration validation passed on 2026-10-06; visual assets and deeper stat/progression checks remain pending.
 
 | ID | Status | Role |
 | --- | --- | --- |
-| `wtfim:copper_sword` | Implemented in source / runtime unvalidated | Standard Copper weapon |
-| `wtfim:copper_axe` | Implemented in source / runtime unvalidated | Copper axe |
-| `wtfim:copper_pickaxe` | Implemented in source / runtime unvalidated | Copper pickaxe |
-| `wtfim:copper_shovel` | Implemented in source / runtime unvalidated | Copper shovel |
-| `wtfim:copper_hoe` | Implemented in source / runtime unvalidated | Copper hoe |
-| `wtfim:copper_shears` | Implemented in source / runtime unvalidated | Repairable Copper shears |
-| `wtfim:copper_helmet` | Implemented in source / runtime unvalidated | Copper helmet |
-| `wtfim:copper_chestplate` | Implemented in source / runtime unvalidated | Copper chestplate |
-| `wtfim:copper_leggings` | Implemented in source / runtime unvalidated | Copper leggings |
-| `wtfim:copper_boots` | Implemented in source / runtime unvalidated | Copper boots |
+| `wtfim:copper_sword` | Registered / DEV registration validated | Standard Copper weapon |
+| `wtfim:copper_axe` | Registered / DEV registration validated | Copper axe |
+| `wtfim:copper_pickaxe` | Registered / DEV registration validated | Copper pickaxe |
+| `wtfim:copper_shovel` | Registered / DEV registration validated | Copper shovel |
+| `wtfim:copper_hoe` | Registered / DEV registration validated | Copper hoe |
+| `wtfim:copper_shears` | Registered / DEV registration validated | Repairable Copper shears |
+| `wtfim:copper_helmet` | Registered / DEV registration validated | Copper helmet |
+| `wtfim:copper_chestplate` | Registered / DEV registration validated | Copper chestplate |
+| `wtfim:copper_leggings` | Registered / DEV registration validated | Copper leggings |
+| `wtfim:copper_boots` | Registered / DEV registration validated | Copper boots |
 
 Supporting source now defines:
 
