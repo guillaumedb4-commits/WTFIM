@@ -74,7 +74,7 @@ wtfim:copper_leggings
 wtfim:copper_boots
 ```
 
-Copper Shears have no native Overgeared equivalent. Accepted WTFIM design: two heated Copper Ingots, Copper-stage forging, initial target of three hammering actions, no quality component.
+Copper Shears have no native Overgeared equivalent. WTFIM now implements the accepted design as a dedicated `wtfim:copper_shears` forging recipe: two `overgeared:heated_copper_ingot`, Stone-tier forging, three hammering actions, no blueprint, no quenching, no polishing. Runtime validation must confirm the result remains non-quality-bearing.
 
 ### Duplicate final Overgeared items
 
@@ -148,4 +148,4 @@ See `COPPER_AUDIT.md`.
 
 ## Current manufacturing boundary
 
-The first manufacturing commit intentionally stops at the nine standard Matcha/Overgeared-overlap pieces. It does **not** yet implement Copper Shears forging, villager trade replacement, EMI hiding, recycling redirects, or advancements. Those remain separate boundaries so failures can be isolated.
+The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging is now implemented as a separate boundary. Villager trade replacement, Creative/EMI hiding, recycling redirects, and advancements remain separate so failures can be isolated.

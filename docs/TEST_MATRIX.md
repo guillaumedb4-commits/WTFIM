@@ -147,12 +147,20 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 
 #### Overgeared manufacturing
 
+Copper Shears source boundary:
+- [x] `wtfim:copper_shears` has a dedicated `overgeared:forging` recipe.
+- [x] Recipe uses exactly two `overgeared:heated_copper_ingot`.
+- [x] Recipe uses Stone-tier forging, 3 hammering actions, no quenching, and no polishing.
+- [x] Recipe is categorized as Overgeared forging `MISC` and requires no blueprint.
+- [x] No direct crafting fallback is added.
+- [ ] Runtime confirm Shears do not receive unintended forging quality.
+
 Static manufacturing redirect status:
 
 - [x] Existing Overgeared recipe IDs are overridden rather than duplicated.
 - [x] Five tool assembly recipes retain `overgeared:crafting_shapeless`, original forged-part inputs, and stick inputs; only result IDs change to `wtfim:`.
 - [x] Four armor recipes retain `overgeared:forging`, original Copper Plate patterns, hammering counts, Stone tier, no quenching, and no polishing; only result IDs change to `wtfim:`.
-- [x] Copper Shears manufacturing is intentionally absent from this commit.
+- [x] Copper Shears manufacturing was intentionally absent from the standard redirect commit; it is now implemented as its own source boundary.
 - [x] No Matcha-style shaped fallback recipe is added.
 
 Runtime manufacturing checks:
@@ -167,8 +175,8 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 - [x] Shovel head -> `wtfim:copper_shovel` works.
 - [x] Hoe head -> `wtfim:copper_hoe` works.
 - [x] Plate forging -> all four WTFIM armor pieces works.
-- [ ] Copper Shears forge from two heated Copper Ingots.
-- [ ] Copper Shears initial three-hammering design feels acceptable.
+- [ ] Copper Shears forge from two heated Copper Ingots. **Source implemented; runtime validation pending.**
+- [ ] Copper Shears initial three-hammering design feels acceptable. **Source implemented; runtime validation pending.**
 - [x] No Matcha-style direct shaped Copper equipment recipes observed at runtime.
 
 #### Forging quality

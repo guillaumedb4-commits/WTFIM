@@ -1,0 +1,22 @@
+{
+  "type": "overgeared:forging",
+  "category": "MISC",
+  "hammering": 3,
+  "has_polishing": false,
+  "key": {
+    "#": {
+      "item": "overgeared:heated_copper_ingot"
+    }
+  },
+  "need_quenching": false,
+  "pattern": [
+    "# ",
+    " #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "wtfim:copper_shears"
+  },
+  "show_notification": false,
+  "tier": "stone"
+}
