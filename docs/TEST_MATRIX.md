@@ -44,8 +44,8 @@ These checks are preflight only. They do **not** replace the Gradle build or Neo
 
 The clean DEV log contains errors even without Matcha datapacks/resource packs or any other gameplay mods. Static inspection of the exact Overgeared 1.6.19 JAR confirms these originate in Overgeared itself, not WTFIM:
 
-- Nine `data/minecraft/recipe/diamond_*.json` resources are shapeless recipes whose ingredient and result are `minecraft:air`. Minecraft 1.21.1 rejects these during recipe parsing.
-- Overgeared's EMI integration emits `overgeared:explanation/flint_knapping loaded with unregistered category: overgeared:flint_knapping`. EMI still completes its reload and indexes `wtfim:test_item`.
+- Nine `data/minecraft/recipe/diamond_*.json` resources are shapeless recipes whose ingredient and result are `minecraft:air`. Minecraft 1.21.1 rejects those recipe files.
+- Overgeared's EMI plugin emits `overgeared:explanation/flint_knapping loaded with unregistered category: overgeared:flint_knapping`. EMI still completes its reload and indexes `wtfim:test_item`.
 - A missing `overgeared:smithing` block tag warning and an optional JEI-class warning are also present.
 
 These are recorded as **external baseline noise**, not as Foundation failures. Do not patch or suppress them merely because Copper work begins.
@@ -72,17 +72,27 @@ These are recorded as **external baseline noise**, not as Foundation failures. D
 - [x] Overgeared manufacturing/quality responsibility defined.
 - [x] Shakudo/Hepatizon and later systems remain outside Copper implementation scope.
 
-### Implementation/runtime checklist
+## Copper registration implementation — static status
 
-These are intentionally unchecked in the documentation-only audit commit.
+- [x] Source defines exactly ten canonical `wtfim:copper_*` equipment registrations.
+- [x] Source defines the accepted 350-use / 6.0-speed / +2 / enchantability-13 Copper tool tier.
+- [x] Source defines the accepted Copper armor material: 2/4/3/1, enchantability 8, zero toughness/knockback resistance.
+- [x] Source defines Copper Shears at 300 durability with explicit Copper-Ingot repair.
+- [x] Source defines `wtfim:incorrect_for_copper_tool` with the accepted Iron/Diamond/Overgeared-Steel boundaries.
+- [x] No Copper manufacturing/acquisition recipes were added in the registration commit.
+- [x] `wtfim:test_item` is intentionally retained until real Copper runtime/resource smoke coverage passes.
+
+These are source-review facts only. The actual Gradle build and runtime checks below remain unchecked.
+
+### Implementation/runtime checklist
 
 #### Build / registry
 
-- [ ] `./gradlew build` succeeds.
-- [ ] All ten canonical `wtfim:copper_*` IDs register.
+- [ ] `./gradlew build` succeeds with Copper registration.
+- [ ] All ten canonical `wtfim:copper_*` IDs register at runtime.
 - [ ] No unintended Copper IDs are registered.
-- [ ] Overgeared required dependency metadata is correct.
-- [ ] `wtfim:test_item` removal/retention is intentional and documented.
+- [ ] Overgeared required dependency metadata is correct once manufacturing integration lands.
+- [ ] `wtfim:test_item` removal/retention is intentional and documented at each boundary.
 
 #### Assets / language
 

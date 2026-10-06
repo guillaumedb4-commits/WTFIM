@@ -5,14 +5,14 @@ The audited Matcha feature matrix remains the source reference for later KEEP / 
 | Feature | Decision | Status / notes |
 | --- | --- | --- |
 | Clean mod architecture | KEEP | Implemented and validated as Foundation `0.1.0-alpha`. |
-| Temporary smoke-test item | KEEP TEMPORARILY | `wtfim:test_item`; remove when Copper implementation replaces the need for the smoke item. |
-| Copper standard equipment family | KEEP / CHANGE | Accepted for the Copper slice as ten canonical `wtfim:copper_*` items. Matcha identity/stats are preserved; manufacturing is redesigned around Overgeared. |
-| Copper direct shaped equipment recipes | DROP | Would bypass Overgeared craftsmanship. |
-| Copper mining gate | CHANGE | Use Overgeared Copper progression boundaries rather than Matcha's permissive incorrect-block tag. |
-| Copper recycling | CHANGE | Use Overgeared-aligned one-Copper-Nugget return rather than Matcha's one-Ingot return. |
-| Copper forging quality | KEEP FROM OVERGEARED | Standard WTFIM Copper tools/armor must be produced through Overgeared recipe types and preserve quality/creator data where applicable. |
-| Duplicate Overgeared final Copper gear | DROP FROM NORMAL PROGRESSION | Registry IDs remain, but recipes/trades/EMI must not expose a parallel normal survival family. |
-| Copper Shears | KEEP / CHANGE | Canonical `wtfim:copper_shears`; forged through Overgeared infrastructure, no quality component. |
+| Temporary smoke-test item | KEEP TEMPORARILY | `wtfim:test_item`; retain until the real Copper items pass runtime/resource validation. |
+| Copper standard equipment family | KEEP / CHANGE | Ten canonical `wtfim:copper_*` items are now registered in source; runtime validation, assets, tags beyond the tier gate, manufacturing, EMI, and progression teaching remain incomplete. |
+| Copper direct shaped equipment recipes | DROP | Not implemented; would bypass Overgeared craftsmanship. |
+| Copper mining gate | CHANGE | Copper tier now points at `wtfim:incorrect_for_copper_tool`, containing vanilla Iron/Diamond requirements plus optional `#overgeared:needs_steel_tool`. Runtime validation remains. |
+| Copper recycling | CHANGE | Planned Overgeared-aligned one-Copper-Nugget return; not implemented yet. |
+| Copper forging quality | KEEP FROM OVERGEARED | Not implemented yet; standard WTFIM Copper tools/armor must later be produced through Overgeared recipe types. |
+| Duplicate Overgeared final Copper gear | DROP FROM NORMAL PROGRESSION | Registry IDs remain; recipe/trade/EMI suppression is not implemented yet. |
+| Copper Shears | KEEP / CHANGE | `wtfim:copper_shears` registered in source with 300 durability and Copper-Ingot repair; manufacturing still pending. |
 | Copper Compass | DEFER | Valid Matcha exploration utility, but outside the core equipment slice. |
 | Copper Dolabra | DEFER | Registered in Matcha but no normal v19 acquisition; audit separately with special tools. |
 | Copper Mattock | DEFER | Registered in Matcha but no normal v19 acquisition; audit separately with special tools. |
@@ -30,4 +30,4 @@ See:
 - `docs/DESIGN_DECISIONS.md` ADR-003
 - `docs/OVERGEARED_COMPAT.md`
 
-The Copper KEEP / CHANGE / DROP decisions are accepted. Implementation is not yet present in this documentation-only commit.
+Copper implementation is intentionally proceeding in small commits. The current boundary is registration/core material definition only; manufacturing remains untouched.

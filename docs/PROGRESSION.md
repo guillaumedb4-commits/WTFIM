@@ -25,9 +25,13 @@ Additional accepted rules:
 
 ## Copper vertical slice
 
-Copper is now fully designed at architecture level but not yet implemented.
+Copper implementation has begun.
 
-### Canonical graph
+The canonical ten-item Copper equipment family, Copper tool tier, Copper armor material, repairable Copper Shears, and Copper incorrect-block tag are now defined in source.
+
+Manufacturing is **not** implemented yet. No direct shaped fallback recipe has been added.
+
+### Canonical target graph
 
 ```text
 Vanilla Copper acquisition
@@ -50,28 +54,30 @@ The standard canonical family is:
 - Leggings
 - Boots
 
-Matcha-style direct shaped Copper equipment crafting is removed from the WTFIM design.
+Matcha-style direct shaped Copper equipment crafting remains excluded from the WTFIM design.
 
 ### Progression boundary
 
-Copper's harvest gate follows Overgeared:
+The Copper tier's incorrect-block tag is defined to include:
 
-- blocks requiring Iron are incorrect for Copper;
-- blocks requiring Diamond are incorrect for Copper;
-- blocks requiring Overgeared Steel are incorrect for Copper.
+- `#minecraft:needs_iron_tool`;
+- `#minecraft:needs_diamond_tool`;
+- optional `#overgeared:needs_steel_tool`.
 
-This preserves Copper as an early tier without allowing Matcha's more permissive mining behavior to bypass Overgeared's intended progression.
+Runtime verification is still required before this is considered validated progression behavior.
 
 ### Quality
 
-The standard five tools and four armor pieces are manufactured through Overgeared recipe types so forging quality/creator data can survive into canonical WTFIM outputs.
+Forging quality is not part of the registration commit.
 
-Copper Shears are the exception: forged through Overgeared infrastructure but intentionally not quality-bearing.
+The later manufacturing commit must retain Overgeared's custom assembly/forging recipe types so quality and creator data can reach canonical WTFIM outputs.
+
+Copper Shears remain the planned exception: forged through Overgeared infrastructure but intentionally not quality-bearing.
 
 ### Future branches
 
 Shakudo and Hepatizon will later use the canonical WTFIM Copper equipment as their bases.
 
-No Shakudo/Hepatizon recipes, items, tags, or compatibility stubs are implemented as part of the Copper audit/documentation commit.
+No Shakudo/Hepatizon recipes, items, tags, or compatibility stubs are implemented as part of Copper registration.
 
 See `COPPER_AUDIT.md` and ADR-003.

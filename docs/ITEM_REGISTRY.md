@@ -4,24 +4,33 @@
 
 | ID | Status | Purpose | Removal condition |
 | --- | --- | --- | --- |
-| `wtfim:test_item` | Temporary | Proves item registration, language, model, texture, `/give`, persistence, and recipe-viewer indexing | Remove when the first real Copper registrations provide equivalent smoke coverage and Copper validation passes |
+| `wtfim:test_item` | Temporary | Proves item registration, language, model, texture, `/give`, persistence, and recipe-viewer indexing | Remove after the real Copper registrations pass runtime/resource validation and provide equivalent smoke coverage |
 
-## Copper — accepted registry plan
+## Copper — canonical registry
 
-The Copper audit accepts these ten canonical final equipment IDs for implementation:
+The first Copper implementation commit defines these ten canonical final equipment IDs in source.
 
 | ID | Status | Role |
 | --- | --- | --- |
-| `wtfim:copper_sword` | Accepted / not yet implemented | Standard Copper weapon |
-| `wtfim:copper_axe` | Accepted / not yet implemented | Copper axe |
-| `wtfim:copper_pickaxe` | Accepted / not yet implemented | Copper pickaxe |
-| `wtfim:copper_shovel` | Accepted / not yet implemented | Copper shovel |
-| `wtfim:copper_hoe` | Accepted / not yet implemented | Copper hoe |
-| `wtfim:copper_shears` | Accepted / not yet implemented | Repairable Copper shears |
-| `wtfim:copper_helmet` | Accepted / not yet implemented | Copper helmet |
-| `wtfim:copper_chestplate` | Accepted / not yet implemented | Copper chestplate |
-| `wtfim:copper_leggings` | Accepted / not yet implemented | Copper leggings |
-| `wtfim:copper_boots` | Accepted / not yet implemented | Copper boots |
+| `wtfim:copper_sword` | Implemented in source / runtime unvalidated | Standard Copper weapon |
+| `wtfim:copper_axe` | Implemented in source / runtime unvalidated | Copper axe |
+| `wtfim:copper_pickaxe` | Implemented in source / runtime unvalidated | Copper pickaxe |
+| `wtfim:copper_shovel` | Implemented in source / runtime unvalidated | Copper shovel |
+| `wtfim:copper_hoe` | Implemented in source / runtime unvalidated | Copper hoe |
+| `wtfim:copper_shears` | Implemented in source / runtime unvalidated | Repairable Copper shears |
+| `wtfim:copper_helmet` | Implemented in source / runtime unvalidated | Copper helmet |
+| `wtfim:copper_chestplate` | Implemented in source / runtime unvalidated | Copper chestplate |
+| `wtfim:copper_leggings` | Implemented in source / runtime unvalidated | Copper leggings |
+| `wtfim:copper_boots` | Implemented in source / runtime unvalidated | Copper boots |
+
+Supporting source now defines:
+
+- a Copper `SimpleTier` with 350 durability, 6.0 mining speed, +2 tier attack bonus, enchantability 13, and Copper-Ingot repair;
+- a registered Copper armor material with 2/4/3/1 protection, enchantability 8, zero toughness/knockback resistance, and Copper-Ingot repair;
+- a Copper Shears subclass with 300 durability and explicit Copper-Ingot repair;
+- the accepted Copper incorrect-block tag boundary.
+
+This commit does not add acquisition/manufacturing recipes, Overgeared recipe redirects, trades, EMI hiding, advancement teaching, models, textures, or language.
 
 ### Explicitly deferred Copper concepts
 

@@ -1,6 +1,7 @@
 package dev.wtfim;
 
 import com.mojang.logging.LogUtils;
+import dev.wtfim.registry.ModArmorMaterials;
 import dev.wtfim.registry.ModItems;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -12,7 +13,8 @@ public final class WTFIM {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public WTFIM(IEventBus modEventBus) {
+        ModArmorMaterials.register(modEventBus);
         ModItems.register(modEventBus);
-        LOGGER.info("WTFIM 0.1.0-alpha foundation initialized");
+        LOGGER.info("WTFIM initialized");
     }
 }
