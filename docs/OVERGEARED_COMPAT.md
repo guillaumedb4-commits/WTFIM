@@ -74,7 +74,7 @@ wtfim:copper_leggings
 wtfim:copper_boots
 ```
 
-Copper Shears have no native Overgeared equivalent. WTFIM now implements the accepted design as a dedicated `wtfim:copper_shears` forging recipe: two `overgeared:heated_copper_ingot`, Stone-tier forging, three hammering actions, no blueprint, no quenching, no polishing. Runtime validation must confirm the result remains non-quality-bearing.
+Copper Shears have no native Overgeared equivalent. WTFIM implements the accepted design as a dedicated `wtfim:copper_shears` forging recipe: two `overgeared:heated_copper_ingot`, Stone-tier forging, three hammering actions, no blueprint, no quenching, no polishing, and explicit `has_quality: false`. Runtime testing exposed that the original diagonal matched Overgeared's `copper_hammer_head` recipe exactly. The Shears pattern is therefore the opposite diagonal (`" #"`, `"# "`), matching Overgeared's vanilla Iron Shears visual convention while remaining distinct because Overgeared's forging matcher does not mirror patterns. Polymorph may coexist in the modpack but is not required to disambiguate this canonical path.
 
 ### Duplicate final Overgeared items
 

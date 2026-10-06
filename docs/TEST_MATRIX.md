@@ -150,10 +150,13 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 Copper Shears source boundary:
 - [x] `wtfim:copper_shears` has a dedicated `overgeared:forging` recipe.
 - [x] Recipe uses exactly two `overgeared:heated_copper_ingot`.
-- [x] Recipe uses Stone-tier forging, 3 hammering actions, no quenching, and no polishing.
+- [x] Recipe uses Stone-tier forging, 3 hammering actions, no quenching, no polishing, and explicitly `has_quality: false`.
 - [x] Recipe is categorized as Overgeared forging `MISC` and requires no blueprint.
+- [x] Recipe uses the anti-diagonal Shears shape (`" #"`, `"# "`), avoiding the exact Overgeared Copper Hammer Head pattern (`"# "`, `" #"`).
+- [x] Exact Overgeared `ForgingRecipe` bytecode confirms forging patterns are not mirrored during matching; the two diagonals are distinct.
 - [x] No direct crafting fallback is added.
 - [ ] Runtime confirm Shears do not receive unintended forging quality.
+- [ ] Runtime confirm Copper Shears no longer collide with `overgeared:copper_hammer_head` without relying on Polymorph.
 
 Static manufacturing redirect status:
 
