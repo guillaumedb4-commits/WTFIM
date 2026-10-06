@@ -86,6 +86,17 @@ Registration validation completed in WTFIM-DEV on 2026-10-06. The build passed, 
 
 The broader stat/mining/quality/manufacturing checks below remain intentionally unchecked.
 
+## Copper presentation implementation — static status
+
+- [x] Source contains models for all ten canonical Copper items.
+- [x] Source contains the ten audited Matcha Copper item textures under the `wtfim` namespace.
+- [x] Source contains Matcha Copper armor layer 1/2 textures under the `wtfim` namespace.
+- [x] English names are defined for all ten canonical Copper items.
+- [x] Vanilla tool/armor-slot/trimmable/enchantable tags mirror the audited Matcha core Copper tag membership using `wtfim:` IDs.
+- [x] No global `minecraft:` model/texture override was introduced.
+
+Runtime asset/tag validation below remains unchecked until the rebuilt JAR is tested in WTFIM-DEV.
+
 ### Implementation/runtime checklist
 
 #### Build / registry

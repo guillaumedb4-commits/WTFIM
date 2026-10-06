@@ -8,7 +8,7 @@
 
 ## Copper — canonical registry
 
-The first Copper implementation commit defines these ten canonical final equipment IDs in source. DEV registration validation passed on 2026-10-06; visual assets and deeper stat/progression checks remain pending.
+The first Copper implementation commit defines these ten canonical final equipment IDs in source. DEV registration validation passed on 2026-10-06. Matcha-derived WTFIM-namespaced models, item textures, armor layers, English names, and standard vanilla equipment/enchantable tags are now present in source; runtime resource validation remains pending.
 
 | ID | Status | Role |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ Supporting source now defines:
 - a Copper Shears subclass with 300 durability and explicit Copper-Ingot repair;
 - the accepted Copper incorrect-block tag boundary.
 
-This commit does not add acquisition/manufacturing recipes, Overgeared recipe redirects, trades, EMI hiding, advancement teaching, models, textures, or language.
+Current Copper work still does not add acquisition/manufacturing recipes, Overgeared recipe redirects, trades, EMI hiding, or advancement teaching. Copper visual resources are self-contained under `assets/wtfim`; no legacy global `minecraft:` overrides are used.
 
 ### Explicitly deferred Copper concepts
 

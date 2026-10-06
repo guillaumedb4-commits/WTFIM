@@ -2,9 +2,9 @@
 
 **What the Fuck Is Matcha?** is a clean Minecraft 1.21.1 / NeoForge rebuild inspired by Matcha Flavoured and designed to integrate deliberately with Overgeared.
 
-Current version: **0.1.0-alpha — Foundation**.
+Current version: **0.1.0-alpha**. Development branch `feature/copper` is building the first gameplay vertical slice.
 
-Foundation contains one disposable registry smoke-test item, `wtfim:test_item`. It does not implement Copper, Steel, Shakudo, Hepatizon, Electrum, Adamant, progression, recipes, loot, mobs, trades, or legacy carrier migration.
+Foundation is validated and retained as the baseline. On `feature/copper`, the canonical ten-item Copper equipment family is registered and registration-validated; its self-contained models, textures, language, and standard item tags are now implemented. Copper manufacturing/progression integration is still incomplete. Steel, Shakudo, Hepatizon, Electrum, Adamant, mobs, and legacy migration remain unimplemented.
 
 ## Build target
 

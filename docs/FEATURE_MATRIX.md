@@ -6,7 +6,7 @@ The audited Matcha feature matrix remains the source reference for later KEEP / 
 | --- | --- | --- |
 | Clean mod architecture | KEEP | Implemented and validated as Foundation `0.1.0-alpha`. |
 | Temporary smoke-test item | KEEP TEMPORARILY | `wtfim:test_item`; retain until the real Copper items pass runtime/resource validation. |
-| Copper standard equipment family | KEEP / CHANGE | Ten canonical `wtfim:copper_*` items are now registered in source; runtime validation, assets, tags beyond the tier gate, manufacturing, EMI, and progression teaching remain incomplete. |
+| Copper standard equipment family | KEEP / CHANGE | Ten canonical `wtfim:copper_*` items are registered and DEV registration-validated. Matcha-derived WTFIM-namespaced models/textures/lang and standard equipment/enchantable tags are implemented in source; runtime resource validation, manufacturing, EMI, and progression teaching remain incomplete. |
 | Copper direct shaped equipment recipes | DROP | Not implemented; would bypass Overgeared craftsmanship. |
 | Copper mining gate | CHANGE | Copper tier now points at `wtfim:incorrect_for_copper_tool`, containing vanilla Iron/Diamond requirements plus optional `#overgeared:needs_steel_tool`. Runtime validation remains. |
 | Copper recycling | CHANGE | Planned Overgeared-aligned one-Copper-Nugget return; not implemented yet. |
@@ -30,4 +30,4 @@ See:
 - `docs/DESIGN_DECISIONS.md` ADR-003
 - `docs/OVERGEARED_COMPAT.md`
 
-Copper implementation is intentionally proceeding in small commits. The current boundary is registration/core material definition only; manufacturing remains untouched.
+Copper implementation is intentionally proceeding in small commits. Registration validation is complete and the current source boundary includes presentation/resources and standard item tags; manufacturing remains untouched.

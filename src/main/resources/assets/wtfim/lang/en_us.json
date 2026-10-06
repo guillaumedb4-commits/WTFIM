@@ -1,3 +1,13 @@
 {
-  "item.wtfim.test_item": "WTFIM Test Item"
+  "item.wtfim.test_item": "WTFIM Test Item",
+  "item.wtfim.copper_sword": "Copper Sword",
+  "item.wtfim.copper_axe": "Copper Axe",
+  "item.wtfim.copper_pickaxe": "Copper Pickaxe",
+  "item.wtfim.copper_shovel": "Copper Shovel",
+  "item.wtfim.copper_hoe": "Copper Hoe",
+  "item.wtfim.copper_shears": "Copper Shears",
+  "item.wtfim.copper_helmet": "Copper Helmet",
+  "item.wtfim.copper_chestplate": "Copper Chestplate",
+  "item.wtfim.copper_leggings": "Copper Leggings",
+  "item.wtfim.copper_boots": "Copper Boots"
 }
