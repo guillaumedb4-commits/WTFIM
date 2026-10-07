@@ -117,21 +117,21 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 
 #### Tool / armor behavior
 
-- [ ] Tool durability = 350.
+- [x] Tool durability = 350. (Operator runtime validation, 2026-10-07.)
 - [ ] Tool mining speed = 6.0 baseline before quality.
 - [ ] Tool enchantability = 13.
-- [ ] Sword = 5 damage / 1.6 speed baseline.
-- [ ] Axe = 9 damage / 0.8 speed baseline.
-- [ ] Pickaxe = 3 damage / 1.2 speed baseline.
-- [ ] Shovel = 3.5 damage / 1.0 speed baseline.
-- [ ] Hoe = 1 damage / 2.0 speed baseline.
-- [ ] Copper Shears durability = 300.
+- [x] Sword = 5 damage / 1.6 speed baseline. (Operator runtime validation, 2026-10-07.)
+- [x] Axe = 9 damage / 0.8 speed baseline. (Operator runtime validation, 2026-10-07.)
+- [x] Pickaxe = 3 damage / 1.2 speed baseline. (Operator runtime validation, 2026-10-07.)
+- [x] Shovel = 3.5 damage / 1.0 speed baseline. (Operator runtime validation, 2026-10-07.)
+- [x] Hoe = 1 damage / 2.0 speed baseline. (Operator runtime validation, 2026-10-07.)
+- [x] Copper Shears durability = 300. (Operator runtime validation, 2026-10-07.)
 - [x] Copper Shears perform shearing behavior. Vanilla comparison was acceptable to the operator; no speed change is required.
-- [ ] Copper repair uses Copper Ingots.
-- [ ] Helmet = armor 2 / durability 200.
-- [ ] Chestplate = armor 4 / durability 200.
-- [ ] Leggings = armor 3 / durability 200.
-- [ ] Boots = armor 1 / durability 200.
+- [x] Copper repair uses Copper Ingots for a standard tool, Copper armor, and Copper Shears. (Operator anvil validation, 2026-10-07.)
+- [ ] Helmet = armor 2 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
+- [ ] Chestplate = armor 4 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
+- [ ] Leggings = armor 3 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
+- [ ] Boots = armor 1 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
 - [ ] Armor enchantability = 8.
 - [ ] Armor toughness = 0.
 - [ ] Armor knockback resistance = 0.
