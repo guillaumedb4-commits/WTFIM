@@ -72,7 +72,7 @@ Copper recycling follows the accepted Overgeared economy rather than Matcha's on
 
 ### Quality
 
-The standard manufacturing redirects retain Overgeared's custom `crafting_shapeless` and `forging` recipe types specifically so quality and creator data can reach canonical WTFIM outputs. DEV runtime validation on 2026-10-07 confirmed that tool quality propagates onto canonical WTFIM Copper tools, applies the expected quality-derived durability/mining/combat modifiers, and survives save/reload while retaining the `wtfim:` item identity. Creator transfer and armor quality remain separate unvalidated checks.
+The standard manufacturing redirects retain Overgeared's custom `crafting_shapeless` and `forging` recipe types specifically so quality and creator data can reach canonical WTFIM outputs. DEV runtime validation on 2026-10-07 confirmed that tool quality propagates onto canonical WTFIM Copper tools, applies the expected quality-derived durability/mining/combat modifiers, and survives save/reload while retaining the `wtfim:` item identity. Armor quality is also DEV runtime-validated: quality and its modifiers persist after save/reload on canonical WTFIM Copper armor while preserving the `wtfim:` item identity. Creator transfer remains a separate unvalidated check.
 
 Copper Shears are the exception: they are forged through Overgeared infrastructure but intentionally not quality-bearing. DEV runtime validation on 2026-10-07 confirmed no forging quality is attached.
 

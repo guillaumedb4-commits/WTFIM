@@ -158,7 +158,7 @@ The nine standard Copper recipe redirects and required dependency metadata are n
 - tool quality data survives standard assembly and save/reload — DEV runtime-validated 2026-10-07;
 - tool quality modifiers behave correctly on canonical WTFIM Copper tools — DEV runtime-validated 2026-10-07;
 - creator transfer remains unvalidated;
-- armor quality behaves correctly;
+- armor quality behaves correctly on canonical WTFIM Copper armor and survives save/reload — DEV runtime-validated 2026-10-07;
 - duplicate Overgeared final recipes are absent;
 - duplicate finished Copper trades are absent — DEV runtime-validated 2026-10-07;
 - EMI presents one coherent final Copper family;
