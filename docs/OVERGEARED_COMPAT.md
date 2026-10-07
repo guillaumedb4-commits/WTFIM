@@ -104,13 +104,15 @@ A surviving ordinary recipe/trade path to the duplicate finished family is a Cop
 
 ### Villager trade suppression
 
-**Implemented in source; second runtime validation pending.** WTFIM explicitly registers a LOWEST-priority `VillagerTradesEvent` listener with `NeoForge.EVENT_BUS.addListener(...)` after Overgeared's normal trade population. The filter delegates to every smithing-profession trade factory and returns `null` only when the generated result is one of the nine obsolete finished `overgeared:copper_*` items.
+**Implemented and DEV runtime-validated — 2026-10-07.** WTFIM explicitly registers a LOWEST-priority `VillagerTradesEvent` listener with `NeoForge.EVENT_BUS.addListener(...)` after Overgeared's normal trade population. The filter delegates to every smithing-profession trade factory and returns `null` only when the generated result is one of the nine obsolete finished `overgeared:copper_*` items.
 
 This intentionally preserves useful Copper sword blades/tool heads and unrelated Overgeared trades. It uses only vanilla/NeoForge trade interfaces: no reflection, mixin, or direct compile-time dependency on Overgeared classes. Existing villagers with already-saved obsolete offers are outside this boundary.
 
-The first DEV attempt using annotation scanning via `EVENT_BUS.register(Class)` did not suppress a fresh Toolsmith's finished Copper Axe offer, while legitimate head trades remained present. Registration was therefore made explicit with `addListener`, and temporary INFO diagnostics now prove whether the handler runs and which obsolete results it suppresses.
+The first DEV attempt using annotation scanning via `EVENT_BUS.register(Class)` did not suppress a fresh Toolsmith's finished Copper Axe offer, while legitimate head trades remained present. Registration was therefore made explicit with `addListener`.
 
-DEV validation confirmed the standard recipe paths now end in `wtfim:copper_*`. The old Overgeared finished Copper items are still visible in Overgeared's Creative tab and EMI index because Overgeared explicitly registers/displays them. Visibility alone is not a progression route. Creative/EMI hiding remains a separate compatibility-cleanup task; villager trades remain the more important survival-route blocker.
+The corrected build was then focused-runtime-tested in WTFIM-DEV. The listener wrapped Armorer (28 listings), Toolsmith (42), and Weaponsmith (17), and fresh offer generation logged suppression of `overgeared:copper_sword`, `overgeared:copper_axe`, `overgeared:copper_pickaxe`, `overgeared:copper_leggings`, and `overgeared:copper_boots`. No finished Overgeared Copper offer leaked during the focused pass. This validates the ADR-004 mechanism across all three smithing professions; the static nine-ID block set still defines the complete suppression boundary. Temporary INFO diagnostics remain in place for now and are not part of this documentation-only closeout.
+
+DEV validation confirmed the standard recipe paths now end in `wtfim:copper_*`. The old Overgeared finished Copper items are still visible in Overgeared's Creative tab and EMI index because Overgeared explicitly registers/displays them. Visibility alone is not a progression route. Creative/EMI hiding remains a separate compatibility-cleanup task; the finished-Copper villager survival-route blocker is now closed.
 
 ### Mining gate
 
@@ -145,7 +147,7 @@ The nine standard Copper recipe redirects and required dependency metadata are n
 - quality modifiers behave correctly on WTFIM item classes;
 - armor quality behaves correctly;
 - duplicate Overgeared final recipes are absent;
-- duplicate finished Copper trades are absent;
+- duplicate finished Copper trades are absent — DEV runtime-validated 2026-10-07;
 - EMI presents one coherent final Copper family;
 - mining gates match the accepted progression;
 - recycling returns the accepted amount;
@@ -156,4 +158,4 @@ See `COPPER_AUDIT.md`.
 
 ## Current manufacturing boundary
 
-The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging is implemented as a separate boundary. Finished-Copper villager trade suppression is now implemented in source under ADR-004. Creative/EMI hiding, recycling redirects, and advancements remain separate so failures can be isolated.
+The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging is implemented as a separate boundary. Finished-Copper villager trade suppression is DEV runtime-validated under ADR-004. Creative/EMI hiding, recycling redirects, and advancements remain separate so failures can be isolated.

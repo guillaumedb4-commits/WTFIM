@@ -167,3 +167,7 @@ Finished Overgeared Copper offers are **removed**, not replaced with WTFIM finis
 - Existing villagers that already persisted obsolete offers are not migrated by this boundary.
 - Creative-tab and EMI visibility of registered Overgeared items is a separate cleanup concern and does not by itself constitute a survival progression route.
 - The filter must be runtime-tested against Weaponsmith, Toolsmith, and Armorer while confirming useful Copper intermediate trades still appear.
+
+### Runtime validation — 2026-10-07
+
+The corrected explicit LOWEST-priority listener was exercised in WTFIM-DEV. Diagnostics confirmed that WTFIM wrapped the Armorer, Toolsmith, and Weaponsmith trade pools and suppressed generated finished Copper offers in each relevant profession path, including `overgeared:copper_sword`, `overgeared:copper_axe`, `overgeared:copper_pickaxe`, `overgeared:copper_leggings`, and `overgeared:copper_boots`. No finished Overgeared Copper offer leaked during the focused pass, while useful Copper head trades had already been observed. ADR-004's implementation is therefore runtime-validated.

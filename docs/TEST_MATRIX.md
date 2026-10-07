@@ -195,7 +195,9 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 
 Trade-filter source status:
 
-Runtime note: the first annotation/class-registration implementation did not suppress a fresh Toolsmith's `overgeared:copper_axe` offer. The filtering logic is retained, but registration is now explicit through `NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, VillagerTradesEvent.class, ...)`. INFO diagnostics are emitted both when each smithing-profession pool is wrapped and when an obsolete finished Copper offer is suppressed.
+Runtime note: the first annotation/class-registration implementation did not suppress a fresh Toolsmith's `overgeared:copper_axe` offer. Registration was then made explicit through `NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, VillagerTradesEvent.class, ...)`.
+
+Focused DEV runtime validation on 2026-10-07 passed with the corrected listener. Diagnostics confirmed wrapping for Armorer (28 listings), Toolsmith (42), and Weaponsmith (17), plus actual suppression of finished `overgeared:copper_sword`, `copper_axe`, `copper_pickaxe`, `copper_leggings`, and `copper_boots`. No finished Overgeared Copper offer leaked during the focused pass.
 
 - [x] LOWEST-priority `VillagerTradesEvent` handler is registered explicitly with `NeoForge.EVENT_BUS.addListener(...)`.
 - [x] Handler targets Weaponsmith, Toolsmith, and Armorer only.
@@ -204,13 +206,13 @@ Runtime note: the first annotation/class-registration implementation did not sup
 - [x] Useful Copper heads/blades/plates are not ID-blocked.
 - [x] Finished duplicate trades are removed rather than redirected to WTFIM finished gear.
 - [x] Existing persisted villager offers are intentionally not migrated in this boundary.
-- [ ] Fresh Weaponsmith does not generate `overgeared:copper_sword`.
-- [ ] Fresh Toolsmith does not generate finished Overgeared Copper tools. **First runtime attempt failed: a fresh Toolsmith still sold `overgeared:copper_axe`; explicit listener registration is the current fix under test.**
-- [ ] Fresh Armorer does not generate finished Overgeared Copper armor.
+- [x] Fresh Weaponsmith does not generate `overgeared:copper_sword`. (DEV runtime validation, 2026-10-07; suppression logged repeatedly.)
+- [x] Fresh Toolsmith does not generate finished Overgeared Copper tools. **First runtime attempt failed; corrected explicit listener registration passed focused DEV validation on 2026-10-07.**
+- [x] Fresh Armorer does not generate finished Overgeared Copper armor. (DEV runtime validation, 2026-10-07.)
 - [x] Useful Copper head/blade trades still generate. (Runtime observed Copper Axe Head / Copper Shovel Head offers.)
 
 - [x] Standard Copper manufacturing recipes no longer produce finished `overgeared:copper_*` gear.
-- [ ] Smithing-profession trades do not provide finished duplicate Overgeared Copper gear. **Source filter implemented; runtime validation pending.**
+- [x] Smithing-profession trades do not provide finished duplicate Overgeared Copper gear. **DEV runtime-validated across Weaponsmith, Toolsmith, and Armorer on 2026-10-07.**
 - [ ] Useful heads/blades/plates remain available only where intentionally retained.
 - [ ] No other installed DEV datapack restores a duplicate finished Copper route.
 
@@ -234,7 +236,7 @@ Runtime note: the first annotation/class-registration implementation did not sup
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [ ] Forging quality survives save/reload.
 - [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
-- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing boundary passed; Shears/trades/recycling/cleanup remain.
+- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing and villager-trade suppression boundaries passed; Shears/recycling/cleanup remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
 
