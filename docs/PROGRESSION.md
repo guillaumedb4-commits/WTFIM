@@ -64,7 +64,7 @@ The Copper tier's incorrect-block tag is defined to include:
 - `#minecraft:needs_diamond_tool`;
 - optional `#overgeared:needs_steel_tool`.
 
-Runtime verification is still required before this is considered validated progression behavior.
+DEV runtime validation on 2026-10-07 confirmed the intended boundary: Iron Ore remains harvestable, Diamond Ore and Obsidian do not drop correctly, and Poor/Well/Expert/Perfect/Master forging quality never upgrades the Copper harvest tier. Exact Overgeared 1.6.19 audit shows its Steel-tool tag contains Obsidian and Crying Obsidian; these overlap the vanilla higher-tier gate, so the Overgeared tag's independent causal effect cannot be isolated in runtime, but its membership and WTFIM inclusion are statically confirmed.
 
 ### Recycling
 

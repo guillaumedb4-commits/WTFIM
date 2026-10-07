@@ -139,11 +139,11 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 
 #### Mining progression
 
-- [ ] Copper cannot correctly harvest `#minecraft:needs_iron_tool`.
-- [ ] Copper cannot correctly harvest `#minecraft:needs_diamond_tool`.
-- [ ] Copper cannot correctly harvest `#overgeared:needs_steel_tool`.
-- [ ] Iron-stage blocks behave as intended in the Overgeared progression.
-- [ ] Mining behavior remains correct across Poor/Well/Expert/Perfect/Master qualities.
+- [x] Copper cannot correctly harvest `#minecraft:needs_iron_tool`. (Diamond Ore runtime validation, 2026-10-07.)
+- [x] Copper cannot correctly harvest `#minecraft:needs_diamond_tool`. (Obsidian runtime validation, 2026-10-07.)
+- [x] Copper does not correctly harvest an actual `#overgeared:needs_steel_tool` member (`minecraft:obsidian`). **The exact Overgeared tag contains Obsidian/Crying Obsidian, which also overlap the vanilla higher-tier gate, so independent runtime causality is not isolatable.**
+- [x] Iron-stage behavior is preserved: Iron Ore is correctly harvested by the canonical Copper Pickaxe while Diamond/Obsidian remain gated. (Operator runtime validation, 2026-10-07.)
+- [x] Mining behavior remains correct across Poor/Well/Expert/Perfect/Master qualities; no quality bypasses the Copper harvest gate. (Operator runtime validation, 2026-10-07.)
 
 #### Overgeared manufacturing
 
@@ -248,7 +248,7 @@ Runtime checks:
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [ ] Forging quality survives save/reload.
 - [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
-- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, villager-trade suppression, and Copper recycling boundaries passed; cleanup and remaining behavior/progression checks remain.
+- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, villager-trade suppression, Copper recycling, and Copper mining-gate boundaries passed; cleanup and remaining behavior/quality checks remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
 

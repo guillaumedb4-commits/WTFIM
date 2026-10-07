@@ -126,6 +126,10 @@ WTFIM Copper must treat these as incorrect:
 
 This deliberately follows Overgeared's progression rather than Matcha's more permissive Copper harvest rules.
 
+**DEV runtime-validated — 2026-10-07.** A canonical Copper Pickaxe correctly harvested Iron Ore, did not correctly harvest Diamond Ore, and did not correctly harvest Obsidian. The same harvest boundary held for Poor, Well, Expert, Perfect, and Master quality Copper Pickaxes, confirming that forging quality does not raise the harvest tier.
+
+Exact Overgeared 1.6.19 source audit shows `#overgeared:needs_steel_tool` contains `minecraft:obsidian` and `minecraft:crying_obsidian`. WTFIM statically includes that tag in `wtfim:incorrect_for_copper_tool`. Because both members also overlap Minecraft's higher vanilla harvest gate, runtime testing confirms the effective behavior on a real member but cannot independently attribute the failure to the Overgeared tag alone.
+
 ### Recycling
 
 Canonical WTFIM Copper equipment recycles through the Overgeared Copper economy to one `overgeared:copper_nugget`.
@@ -157,7 +161,7 @@ The nine standard Copper recipe redirects and required dependency metadata are n
 - duplicate Overgeared final recipes are absent;
 - duplicate finished Copper trades are absent — DEV runtime-validated 2026-10-07;
 - EMI presents one coherent final Copper family;
-- mining gates match the accepted progression;
+- mining gates match the accepted progression — DEV runtime-validated 2026-10-07;
 - recycling returns the accepted amount — DEV runtime-validated 2026-10-07;
 - no new WTFIM/Overgeared errors appear beyond Foundation baseline.
 
