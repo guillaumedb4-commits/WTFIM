@@ -68,7 +68,7 @@ Runtime verification is still required before this is considered validated progr
 
 ### Recycling
 
-Copper recycling follows the accepted Overgeared economy rather than Matcha's one-ingot return. Source recipes now recycle every canonical `wtfim:copper_*` equipment item to one `overgeared:copper_nugget` through both smelting and blasting. The nine standard items reuse/override Overgeared's existing recycling recipe IDs; Copper Shears use equivalent WTFIM recipes. Runtime validation is still required.
+Copper recycling follows the accepted Overgeared economy rather than Matcha's one-ingot return. Every canonical `wtfim:copper_*` equipment item recycles to one `overgeared:copper_nugget` through both smelting and blasting. The nine standard items reuse/override Overgeared's existing recycling recipe IDs; Copper Shears use equivalent WTFIM recipes. DEV runtime validation on 2026-10-07 confirmed all ten items work in both furnace types and no one-Ingot Matcha-style recycling path remains. A broader duplication-loop audit remains separate.
 
 ### Quality
 

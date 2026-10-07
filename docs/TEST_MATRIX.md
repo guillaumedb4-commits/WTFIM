@@ -228,10 +228,10 @@ Source status:
 
 Runtime checks:
 
-- [ ] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget` in a furnace.
-- [ ] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget` in a blast furnace.
-- [ ] Copper Shears recycle correctly through both furnace types.
-- [ ] No one-Ingot Matcha-style Copper equipment recycling remains.
+- [x] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget` in a furnace. (Operator runtime validation, 2026-10-07.)
+- [x] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget` in a blast furnace. (Operator runtime validation, 2026-10-07.)
+- [x] Copper Shears recycle correctly through both furnace types. (Operator runtime validation, 2026-10-07.)
+- [x] No one-Ingot Matcha-style Copper equipment recycling remains. (Operator runtime validation, 2026-10-07.)
 - [ ] Recycling cannot create a material duplication exploit.
 
 #### EMI / discoverability
@@ -248,7 +248,7 @@ Runtime checks:
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [ ] Forging quality survives save/reload.
 - [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
-- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, and villager-trade suppression boundaries passed; recycling is implemented in source pending runtime validation, while cleanup and remaining behavior/progression checks remain.
+- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, villager-trade suppression, and Copper recycling boundaries passed; cleanup and remaining behavior/progression checks remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
 

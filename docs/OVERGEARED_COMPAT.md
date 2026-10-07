@@ -130,9 +130,11 @@ This deliberately follows Overgeared's progression rather than Matcha's more per
 
 Canonical WTFIM Copper equipment recycles through the Overgeared Copper economy to one `overgeared:copper_nugget`.
 
-**Implemented in source; runtime validation pending.** For the nine standard Copper tools/armor pieces, WTFIM overrides Overgeared's existing smelting and blasting recipe IDs and changes only the ingredient from `overgeared:copper_*` to the canonical `wtfim:copper_*` item. The Overgeared result, XP, and cooking times are preserved exactly: one `overgeared:copper_nugget`, 0.1 XP, 200-tick smelting / 100-tick blasting.
+**Implemented and DEV runtime-validated — 2026-10-07.** For the nine standard Copper tools/armor pieces, WTFIM overrides Overgeared's existing smelting and blasting recipe IDs and changes only the ingredient from `overgeared:copper_*` to the canonical `wtfim:copper_*` item. The Overgeared result, XP, and cooking times are preserved exactly: one `overgeared:copper_nugget`, 0.1 XP, 200-tick smelting / 100-tick blasting.
 
 Because Overgeared has no Copper Shears, WTFIM adds matching `wtfim:` smelting and blasting recipes for `wtfim:copper_shears` with the same one-nugget result, XP, and timings. Matcha's one-full-ingot recycling is not reproduced.
+
+The operator validated all ten canonical Copper items in both furnace types: each path returned exactly one `overgeared:copper_nugget`, Copper Shears worked in furnace and blast furnace, and no full-Copper-Ingot recycling path appeared. The broader material-loop duplication audit remains separate.
 
 ### Dependency transition
 
@@ -156,7 +158,7 @@ The nine standard Copper recipe redirects and required dependency metadata are n
 - duplicate finished Copper trades are absent — DEV runtime-validated 2026-10-07;
 - EMI presents one coherent final Copper family;
 - mining gates match the accepted progression;
-- recycling returns the accepted amount;
+- recycling returns the accepted amount — DEV runtime-validated 2026-10-07;
 - no new WTFIM/Overgeared errors appear beyond Foundation baseline.
 
 See `COPPER_AUDIT.md`.
@@ -164,4 +166,4 @@ See `COPPER_AUDIT.md`.
 
 ## Current manufacturing boundary
 
-The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging behavior is DEV runtime-validated as its own boundary. Finished-Copper villager trade suppression is DEV runtime-validated under ADR-004. Creative/EMI hiding and advancements remain separate so failures can be isolated. Copper recycling recipes are now implemented in source as their own boundary pending runtime validation.
+The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging behavior is DEV runtime-validated as its own boundary. Finished-Copper villager trade suppression is DEV runtime-validated under ADR-004. Creative/EMI hiding and advancements remain separate so failures can be isolated. Copper recycling recipes are DEV runtime-validated as their own boundary.
