@@ -218,7 +218,19 @@ Focused DEV runtime validation on 2026-10-07 passed with the corrected listener.
 
 #### Recycling / economy
 
-- [ ] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget`.
+Source status:
+
+- [x] Nine standard Overgeared Copper smelting recipe IDs are overridden to accept the canonical `wtfim:copper_*` item and still return one `overgeared:copper_nugget`.
+- [x] Nine standard Overgeared Copper blasting recipe IDs are overridden the same way.
+- [x] `wtfim:copper_shears` has matching smelting and blasting recycling recipes because Overgeared has no native Copper Shears.
+- [x] Overgeared's 0.1 XP and 200-tick smelting / 100-tick blasting values are preserved.
+- [x] Matcha's one-full-Copper-Ingot recycling recipe is not reproduced.
+
+Runtime checks:
+
+- [ ] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget` in a furnace.
+- [ ] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget` in a blast furnace.
+- [ ] Copper Shears recycle correctly through both furnace types.
 - [ ] No one-Ingot Matcha-style Copper equipment recycling remains.
 - [ ] Recycling cannot create a material duplication exploit.
 
@@ -236,7 +248,7 @@ Focused DEV runtime validation on 2026-10-07 passed with the corrected listener.
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [ ] Forging quality survives save/reload.
 - [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
-- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, and villager-trade suppression boundaries passed; recycling/cleanup and remaining behavior/progression checks remain.
+- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, and villager-trade suppression boundaries passed; recycling is implemented in source pending runtime validation, while cleanup and remaining behavior/progression checks remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
 

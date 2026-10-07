@@ -66,6 +66,10 @@ The Copper tier's incorrect-block tag is defined to include:
 
 Runtime verification is still required before this is considered validated progression behavior.
 
+### Recycling
+
+Copper recycling follows the accepted Overgeared economy rather than Matcha's one-ingot return. Source recipes now recycle every canonical `wtfim:copper_*` equipment item to one `overgeared:copper_nugget` through both smelting and blasting. The nine standard items reuse/override Overgeared's existing recycling recipe IDs; Copper Shears use equivalent WTFIM recipes. Runtime validation is still required.
+
 ### Quality
 
 The standard manufacturing redirects retain Overgeared's custom `crafting_shapeless` and `forging` recipe types specifically so quality and creator data can reach canonical WTFIM outputs. Runtime propagation is not yet marked validated.
