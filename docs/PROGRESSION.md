@@ -29,7 +29,7 @@ Copper implementation has begun.
 
 The canonical ten-item Copper equipment family, Copper tool tier, Copper armor material, repairable Copper Shears, and Copper incorrect-block tag are now defined in source.
 
-Standard manufacturing redirection is DEV-validated for the five standard tools and four armor pieces. Copper Shears now have their own source implementation using Overgeared forging: two heated Copper Ingots, Stone tier, three hammering actions, no quenching/polishing, no blueprint. Runtime Shears-forging validation is pending. No direct shaped fallback recipe has been added.
+Standard manufacturing redirection is DEV-validated for the five standard tools and four armor pieces. Copper Shears use their own Overgeared forging path: two heated Copper Ingots, Stone tier, three hammering actions, no quenching/polishing, no blueprint. DEV runtime validation confirms the Shears and Copper Hammer Head patterns resolve independently and Shears receive no forging quality. The separate subjective three-hammering balance check remains open. No direct shaped fallback recipe has been added.
 
 ### Canonical target graph
 
@@ -70,7 +70,7 @@ Runtime verification is still required before this is considered validated progr
 
 The standard manufacturing redirects retain Overgeared's custom `crafting_shapeless` and `forging` recipe types specifically so quality and creator data can reach canonical WTFIM outputs. Runtime propagation is not yet marked validated.
 
-Copper Shears are the planned exception: forged through Overgeared infrastructure but intentionally not quality-bearing. Their dedicated forging recipe is now implemented in source; runtime must confirm no quality component is attached.
+Copper Shears are the exception: they are forged through Overgeared infrastructure but intentionally not quality-bearing. DEV runtime validation on 2026-10-07 confirmed no forging quality is attached.
 
 ### Future branches
 

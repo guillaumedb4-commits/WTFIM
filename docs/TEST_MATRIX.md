@@ -155,8 +155,8 @@ Copper Shears source boundary:
 - [x] Recipe uses the anti-diagonal Shears shape (`" #"`, `"# "`), avoiding the exact Overgeared Copper Hammer Head pattern (`"# "`, `" #"`).
 - [x] Exact Overgeared `ForgingRecipe` bytecode confirms forging patterns are not mirrored during matching; the two diagonals are distinct.
 - [x] No direct crafting fallback is added.
-- [ ] Runtime confirm Shears do not receive unintended forging quality.
-- [ ] Runtime confirm Copper Shears no longer collide with `overgeared:copper_hammer_head` without relying on Polymorph.
+- [x] Runtime confirm Shears do not receive unintended forging quality. (Operator validation, 2026-10-07.)
+- [x] Runtime confirm Copper Shears no longer collide with `overgeared:copper_hammer_head` without relying on Polymorph. (Operator validated both recipes forge independently, 2026-10-07.)
 
 Static manufacturing redirect status:
 
@@ -178,7 +178,7 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 - [x] Shovel head -> `wtfim:copper_shovel` works.
 - [x] Hoe head -> `wtfim:copper_hoe` works.
 - [x] Plate forging -> all four WTFIM armor pieces works.
-- [ ] Copper Shears forge from two heated Copper Ingots. **Source implemented; runtime validation pending.**
+- [x] Copper Shears forge from two heated Copper Ingots. (Operator runtime validation, 2026-10-07.)
 - [ ] Copper Shears initial three-hammering design feels acceptable. **Source implemented; runtime validation pending.**
 - [x] No Matcha-style direct shaped Copper equipment recipes observed at runtime.
 
@@ -189,7 +189,7 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 - [ ] Quality attribute modifiers apply correctly to WTFIM tools.
 - [ ] Quality attribute modifiers apply correctly to WTFIM armor.
 - [ ] Durability/mining-speed quality modifiers behave correctly.
-- [ ] Copper Shears do not receive unintended quality.
+- [x] Copper Shears do not receive unintended quality. (Operator runtime validation, 2026-10-07.)
 
 #### Duplicate-route suppression
 
@@ -236,7 +236,7 @@ Focused DEV runtime validation on 2026-10-07 passed with the corrected listener.
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [ ] Forging quality survives save/reload.
 - [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
-- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing and villager-trade suppression boundaries passed; Shears/recycling/cleanup remain.
+- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, and villager-trade suppression boundaries passed; recycling/cleanup and remaining behavior/progression checks remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
 
