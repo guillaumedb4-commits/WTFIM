@@ -186,9 +186,9 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 
 - [x] Tool quality component survives Overgeared custom assembly onto the canonical WTFIM tool.
 - [ ] Creator component transfers where expected.
-- [ ] Quality attribute modifiers apply correctly to WTFIM tools.
+- [x] Quality attribute modifiers apply correctly to WTFIM tools. Poor and Expert Copper Pickaxes showed the expected quality-derived stat changes. (Operator runtime validation, 2026-10-07.)
 - [ ] Quality attribute modifiers apply correctly to WTFIM armor.
-- [ ] Durability/mining-speed quality modifiers behave correctly.
+- [x] Durability/mining-speed quality modifiers behave correctly on canonical WTFIM Copper tools. Poor/Expert values matched the expected Overgeared quality behavior. (Operator runtime validation, 2026-10-07.)
 - [x] Copper Shears do not receive unintended quality. (Operator runtime validation, 2026-10-07.)
 
 #### Duplicate-route suppression
@@ -246,9 +246,9 @@ Runtime checks:
 #### Persistence / logs / environments
 
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
-- [ ] Forging quality survives save/reload.
+- [x] Forging quality and its applied effects survive save/reload on canonical WTFIM Copper tools; item identity remains `wtfim:copper_pickaxe`. (Operator runtime validation, 2026-10-07.)
 - [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
-- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, villager-trade suppression, Copper recycling, and Copper mining-gate boundaries passed; cleanup and remaining behavior/quality checks remain.
+- [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, villager-trade suppression, Copper recycling, and Copper mining-gate boundaries passed; cleanup, armor-quality, creator-transfer, and remaining behavior checks remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
 

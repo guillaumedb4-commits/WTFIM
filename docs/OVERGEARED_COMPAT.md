@@ -155,8 +155,9 @@ Overgeared Universal is not part of the Copper integration.
 The nine standard Copper recipe redirects and required dependency metadata are now DEV runtime-validated. Copper is still not complete until the remaining checks are finished:
 
 - WTFIM outputs appear in Overgeared manufacturing;
-- quality and creator data survive standard tool assembly;
-- quality modifiers behave correctly on WTFIM item classes;
+- tool quality data survives standard assembly and save/reload — DEV runtime-validated 2026-10-07;
+- tool quality modifiers behave correctly on canonical WTFIM Copper tools — DEV runtime-validated 2026-10-07;
+- creator transfer remains unvalidated;
 - armor quality behaves correctly;
 - duplicate Overgeared final recipes are absent;
 - duplicate finished Copper trades are absent — DEV runtime-validated 2026-10-07;
