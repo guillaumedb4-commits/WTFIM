@@ -117,8 +117,8 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 #### Tool / armor behavior
 
 - [x] Tool durability = 350. (Operator runtime validation, 2026-10-07.)
-- [ ] Tool mining speed = 6.0 baseline before quality.
-- [ ] Tool enchantability = 13.
+- [x] Tool mining speed = 6.0 baseline before quality. (Built-artifact validation: `javap` on `ModToolTiers` from `wtfim-0.1.0-alpha.jar` shows `ldc ... // float 6.0f` in the `SimpleTier` constructor path, 2026-10-08.)
+- [x] Tool enchantability = 13. (Built-artifact validation: `javap` on `ModToolTiers` shows `bipush 13` immediately before the `SimpleTier` constructor call, 2026-10-08.)
 - [x] Sword = 5 damage / 1.6 speed baseline. (Operator runtime validation, 2026-10-07.)
 - [x] Axe = 9 damage / 0.8 speed baseline. (Operator runtime validation, 2026-10-07.)
 - [x] Pickaxe = 3 damage / 1.2 speed baseline. (Operator runtime validation, 2026-10-07.)
@@ -131,7 +131,7 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 - [x] Chestplate = armor 4 / durability 200. (Armor value runtime-validated via `minecraft:generic.armor`; durability 200 already validated.)
 - [x] Leggings = armor 3 / durability 200. (Armor value runtime-validated via `minecraft:generic.armor`; durability 200 already validated.)
 - [x] Boots = armor 1 / durability 200. (Armor value runtime-validated via `minecraft:generic.armor`; durability 200 already validated.)
-- [ ] Armor enchantability = 8.
+- [x] Armor enchantability = 8. (Built-artifact validation: `javap` on `ModArmorMaterials` shows `bipush 8` in the `ArmorMaterial` constructor path, 2026-10-08.)
 - [x] Armor toughness = 0. (Operator runtime validation via `minecraft:generic.armor_toughness`, 2026-10-08.)
 - [x] Armor knockback resistance = 0. (Operator runtime validation via `minecraft:generic.knockback_resistance`, 2026-10-08.)
 - [x] No unintended fire resistance/special behavior. A canonical Copper armor item burned normally in lava. (Operator runtime validation, 2026-10-08.)

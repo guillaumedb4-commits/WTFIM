@@ -27,8 +27,8 @@ The first Copper implementation commit defines these ten canonical final equipme
 
 Supporting source now defines:
 
-- a Copper `SimpleTier` with 350 durability, 6.0 mining speed, +2 tier attack bonus, enchantability 13, and Copper-Ingot repair;
-- a registered Copper armor material with 2/4/3/1 protection, enchantability 8, zero toughness/knockback resistance, and Copper-Ingot repair;
+- a Copper `SimpleTier` with 350 durability, 6.0 mining speed, +2 tier attack bonus, enchantability 13, and Copper-Ingot repair; the built JAR bytecode was checked on 2026-10-08 and contains the expected 6.0/13 constructor constants;
+- a registered Copper armor material with 2/4/3/1 protection, enchantability 8, zero toughness/knockback resistance, and Copper-Ingot repair; the built JAR bytecode was checked on 2026-10-08 and contains the expected enchantability-8 constructor constant;
 - a Copper Shears subclass with 300 durability and explicit Copper-Ingot repair;
 - the accepted Copper incorrect-block tag boundary.
 
