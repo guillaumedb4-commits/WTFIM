@@ -157,7 +157,7 @@ The nine standard Copper recipe redirects and required dependency metadata are n
 - WTFIM outputs appear in Overgeared manufacturing;
 - tool quality data survives standard assembly and save/reload — DEV runtime-validated 2026-10-07;
 - tool quality modifiers behave correctly on canonical WTFIM Copper tools — DEV runtime-validated 2026-10-07;
-- creator transfer remains unvalidated;
+- creator transfer through standard Copper tool assembly is DEV runtime-validated 2026-10-07; the same `overgeared:creator` value persisted from forged head to final `wtfim:copper_pickaxe`, and a properly polished/cooled Well head remained Well on the final tool;
 - armor quality behaves correctly on canonical WTFIM Copper armor and survives save/reload — DEV runtime-validated 2026-10-07;
 - duplicate Overgeared final recipes are absent;
 - duplicate finished Copper trades are absent — DEV runtime-validated 2026-10-07;
