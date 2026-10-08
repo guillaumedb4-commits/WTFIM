@@ -240,7 +240,7 @@ Runtime checks:
 - [x] EMI shows canonical WTFIM outputs for final Copper equipment.
 - [x] Duplicate finished Overgeared Copper items are hidden where feasible. `c:hidden_from_recipe_viewers` hides exactly the nine obsolete finished `overgeared:copper_*` IDs; DEV runtime validation confirmed they disappear from EMI while Copper Sword Blade, four tool heads, Copper Plate, and canonical `wtfim:copper_*` items remain visible. (Operator validation, 2026-10-08.)
 - [x] No Matcha-style direct Copper gear recipe appears.
-- [ ] Copper progression advancement triggers as designed.
+- [ ] Copper progression advancement triggers as designed. Exact Matcha/Overgeared trigger audit completed 2026-10-08; recommended parent/trigger/text boundary is documented in `COPPER_AUDIT.md` and awaits explicit product acceptance before implementation.
 
 #### Persistence / logs / environments
 

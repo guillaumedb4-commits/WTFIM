@@ -336,6 +336,30 @@ It should not advertise direct Matcha-style crafting or the duplicate Overgeared
 
 WTFIM will add a small Copper progression advancement teaching that Copper equipment is forged rather than directly crafted. Shakudo/Hepatizon are not introduced by the Copper advancement.
 
+## Copper advancement trigger audit — 2026-10-08
+
+The accepted Copper design requires one small progression advancement that teaches that canonical Copper equipment is forged rather than directly crafted. The exact trigger, parent, and player-facing wording were not previously specified, so this remains a product/design decision rather than an implementation detail.
+
+Exact-source findings:
+
+- Matcha v19 has no meaningful advancement for the Copper equipment tier. Its Copper-related advancement coverage is limited to recipe unlocks such as Raw Copper/Copper Wire and an unrelated Copper Eye mechanic.
+- Matcha's visible smithing advancements (for example Silver Sword and later Elytra upgrades) use `minecraft:recipe_crafted` for a specific recipe ID.
+- Overgeared's visible progression tree already teaches the craftsmanship sequence through `rock_knapping -> casting -> hammer -> making_anvil -> blueprint`.
+- Overgeared uses `minecraft:inventory_changed` for acquisition milestones such as the first smithing hammer, blueprint, and Steel Pickaxe.
+- Overgeared's `overgeared:forging_quality` criterion filters forging quality only; it does not constrain the result to Copper equipment, so it is not suitable for a Copper-specific advancement.
+- No direct evidence was found in the exact Overgeared 1.6.19 classes that its custom forging station fires vanilla `minecraft:recipe_crafted` for forged armor/Shears. Using `recipe_crafted` would therefore not provide one reliable trigger across all ten canonical WTFIM Copper items.
+
+Recommended design, pending explicit acceptance:
+
+- advancement ID: `wtfim:copper/first_forged_equipment`;
+- parent: `overgeared:making_anvil`, because it is the common prerequisite for both blueprint-based standard gear and blueprint-free Copper Shears;
+- completion: obtain any one of the ten canonical `wtfim:copper_*` equipment items, using `minecraft:inventory_changed` with OR criteria;
+- frame: task; toast/chat enabled; no gameplay reward;
+- icon: `wtfim:copper_pickaxe`;
+- teaching text should state that Copper equipment comes from the forge/Overgeared workflow rather than direct grid crafting.
+
+Tradeoff: an inventory-based criterion proves acquisition rather than the physical forge action itself. In the accepted Copper slice this is acceptable because ordinary alternate acquisition routes to canonical Copper equipment have been explicitly removed/audited. A custom cross-mod forge trigger would be more exact but would add unnecessary implementation coupling for a tutorial advancement.
+
 ## Implementation boundary
 
 This audit does **not** authorize implementation of Shakudo, Hepatizon, Steel, Diamond, Electrum, Adamant, Estus, mobs, Sack, or later progression systems.
