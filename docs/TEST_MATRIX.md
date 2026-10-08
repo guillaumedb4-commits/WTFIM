@@ -212,8 +212,8 @@ Focused DEV runtime validation on 2026-10-07 passed with the corrected listener.
 
 - [x] Standard Copper manufacturing recipes no longer produce finished `overgeared:copper_*` gear.
 - [x] Smithing-profession trades do not provide finished duplicate Overgeared Copper gear. **DEV runtime-validated across Weaponsmith, Toolsmith, and Armorer on 2026-10-07.**
-- [ ] Useful heads/blades/plates remain available only where intentionally retained.
-- [ ] No other installed DEV datapack restores a duplicate finished Copper route.
+- [x] Useful heads/blades/plates remain available only where intentionally retained. EMI runtime audit confirmed the Copper Sword Blade, Axe/Pickaxe/Shovel/Hoe Heads, and Copper Plate still expose their intended Overgeared acquisition/forging routes. (Operator validation, 2026-10-08.)
+- [x] No other installed DEV datapack restores a duplicate finished Copper route. EMI showed no production recipe for any of the nine finished `overgeared:copper_*` items; `/datapack list enabled` showed only vanilla built-in data plus NeoForge `mod_data`, with no external user datapack enabled. (Operator validation, 2026-10-08.)
 
 #### Recycling / economy
 
