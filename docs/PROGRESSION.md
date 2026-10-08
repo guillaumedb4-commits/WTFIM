@@ -29,7 +29,7 @@ Copper implementation has begun.
 
 The canonical ten-item Copper equipment family, Copper tool tier, Copper armor material, repairable Copper Shears, and Copper incorrect-block tag are now defined in source.
 
-Standard manufacturing redirection is DEV-validated for the five standard tools and four armor pieces. Copper Shears use their own Overgeared forging path: two heated Copper Ingots, Stone tier, three hammering actions, no quenching/polishing, no blueprint. DEV runtime validation confirms the Shears and Copper Hammer Head patterns resolve independently and Shears receive no forging quality. The separate subjective three-hammering balance check remains open. No direct shaped fallback recipe has been added.
+Standard manufacturing redirection is DEV-validated for the five standard tools and four armor pieces. Copper Shears use their own Overgeared forging path: two heated Copper Ingots, Stone tier, three hammering actions, no quenching/polishing, no blueprint. DEV runtime validation confirms the Shears and Copper Hammer Head patterns resolve independently and Shears receive no forging quality. The three-hammering balance target was accepted in gameplay testing on 2026-10-08. No direct shaped fallback recipe has been added.
 
 ### Canonical target graph
 

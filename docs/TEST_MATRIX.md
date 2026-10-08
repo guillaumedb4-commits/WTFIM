@@ -178,7 +178,7 @@ Manufacturing validation passed in WTFIM-DEV on 2026-10-06 for the five standard
 - [x] Hoe head -> `wtfim:copper_hoe` works.
 - [x] Plate forging -> all four WTFIM armor pieces works.
 - [x] Copper Shears forge from two heated Copper Ingots. (Operator runtime validation, 2026-10-07.)
-- [ ] Copper Shears initial three-hammering design feels acceptable. **Source implemented; runtime validation pending.**
+- [x] Copper Shears initial three-hammering design feels acceptable. (Operator gameplay/balance validation, 2026-10-08.)
 - [x] No Matcha-style direct shaped Copper equipment recipes observed at runtime.
 
 #### Forging quality
