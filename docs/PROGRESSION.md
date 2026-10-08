@@ -78,7 +78,7 @@ Copper Shears are the exception: they are forged through Overgeared infrastructu
 
 ### Progression teaching
 
-The accepted Copper tutorial advancement is `wtfim:copper/first_forged_equipment`. It is parented to `overgeared:making_anvil` and completes when the player obtains any one of the ten canonical `wtfim:copper_*` equipment items. The trigger uses vanilla `minecraft:inventory_changed`; this deliberately teaches acquisition of canonical forged Copper without adding a custom WTFIM↔Overgeared trigger. The advancement title is `Forged in Copper`, it grants no gameplay reward, and it does not introduce Shakudo/Hepatizon. Source implementation is complete; DEV runtime validation is pending.
+The accepted Copper tutorial advancement is `wtfim:copper/first_forged_equipment`. It is parented to `overgeared:making_anvil` and completes when the player obtains any one of the ten canonical `wtfim:copper_*` equipment items. The trigger uses vanilla `minecraft:inventory_changed`; this deliberately teaches acquisition of canonical forged Copper without adding a custom WTFIM↔Overgeared trigger. The advancement title is `Forged in Copper`, it grants no gameplay reward, and it does not introduce Shakudo/Hepatizon. DEV runtime validation on 2026-10-08 confirmed the advancement loads correctly, both Copper Pickaxe and Copper Shears can independently complete it, and the accepted text renders correctly.
 
 ### Future branches
 

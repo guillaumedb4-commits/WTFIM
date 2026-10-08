@@ -359,7 +359,7 @@ Accepted design — explicit operator approval 2026-10-08:
 - title: `Forged in Copper`;
 - description: `Forge your first piece of Copper equipment through Overgeared craftsmanship.`
 
-**Implemented in source — runtime validation pending.** The advancement is data-driven under `data/wtfim/advancement/copper/first_forged_equipment.json`, uses ten `minecraft:inventory_changed` criteria joined by one OR requirement group, and introduces no custom trigger or direct Overgeared Java coupling.
+**Implemented and DEV runtime-validated — 2026-10-08.** The advancement is data-driven under `data/wtfim/advancement/copper/first_forged_equipment.json`, uses ten `minecraft:inventory_changed` criteria joined by one OR requirement group, and introduces no custom trigger or direct Overgeared Java coupling. The operator confirmed the advancement loads, both Copper Pickaxe and Copper Shears independently complete it, and the accepted title/description render correctly.
 
 Tradeoff: an inventory-based criterion proves acquisition rather than the physical forge action itself. In the accepted Copper slice this is acceptable because ordinary alternate acquisition routes to canonical Copper equipment have been explicitly removed/audited. A custom cross-mod forge trigger would be more exact but would add unnecessary implementation coupling for a tutorial advancement.
 

@@ -240,7 +240,7 @@ Runtime checks:
 - [x] EMI shows canonical WTFIM outputs for final Copper equipment.
 - [x] Duplicate finished Overgeared Copper items are hidden where feasible. `c:hidden_from_recipe_viewers` hides exactly the nine obsolete finished `overgeared:copper_*` IDs; DEV runtime validation confirmed they disappear from EMI while Copper Sword Blade, four tool heads, Copper Plate, and canonical `wtfim:copper_*` items remain visible. (Operator validation, 2026-10-08.)
 - [x] No Matcha-style direct Copper gear recipe appears.
-- [ ] Copper progression advancement triggers as designed. **Implementation added after explicit design acceptance: `wtfim:copper/first_forged_equipment`, parent `overgeared:making_anvil`, any canonical Copper equipment via `minecraft:inventory_changed`; runtime validation pending.**
+- [x] Copper progression advancement triggers as designed. `wtfim:copper/first_forged_equipment` loaded correctly in WTFIM-DEV; both `wtfim:copper_pickaxe` and `wtfim:copper_shears` independently completed the OR criteria, and the accepted title/description rendered correctly. (Operator runtime validation, 2026-10-08.)
 
 #### Persistence / logs / environments
 
