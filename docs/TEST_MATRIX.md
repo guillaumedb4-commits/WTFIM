@@ -238,7 +238,7 @@ Runtime checks:
 - [x] EMI indexes the canonical WTFIM Copper items in the presentation-validation build.
 - [x] EMI shows the Overgeared Copper manufacturing chain with canonical WTFIM final outputs.
 - [x] EMI shows canonical WTFIM outputs for final Copper equipment.
-- [ ] Duplicate finished Overgeared Copper items are hidden where feasible. **Implementation added via `c:hidden_from_recipe_viewers` for exactly the nine obsolete finished `overgeared:copper_*` IDs; runtime EMI validation pending.**
+- [x] Duplicate finished Overgeared Copper items are hidden where feasible. `c:hidden_from_recipe_viewers` hides exactly the nine obsolete finished `overgeared:copper_*` IDs; DEV runtime validation confirmed they disappear from EMI while Copper Sword Blade, four tool heads, Copper Plate, and canonical `wtfim:copper_*` items remain visible. (Operator validation, 2026-10-08.)
 - [x] No Matcha-style direct Copper gear recipe appears.
 - [ ] Copper progression advancement triggers as designed.
 
