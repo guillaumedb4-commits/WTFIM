@@ -104,7 +104,7 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 - [x] All ten canonical `wtfim:copper_*` IDs register at runtime. (`/give` verified for all ten in WTFIM-DEV, 2026-10-06.)
 - [x] No unintended WTFIM Copper IDs observed during registration validation.
 - [x] Source declares Overgeared `1.21.1-1.6.19+` as required/BOTH and orders WTFIM AFTER Overgeared. Runtime metadata/version-range validation remains part of the next DEV test.
-- [x] `wtfim:test_item` is intentionally retired after real Copper registration/resource/persistence/EMI smoke coverage replaced the Foundation probe item.
+- [x] `wtfim:test_item` is intentionally retired after real Copper registration/resource/persistence/EMI smoke coverage replaced the Foundation probe item. Retirement build/runtime validation passed in WTFIM-DEV on 2026-10-08: build successful, ID absent, EMI entry absent, existing world loaded, and Copper Pickaxe/Chestplate remained healthy.
 
 #### Assets / language
 

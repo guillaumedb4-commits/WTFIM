@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | `wtfim:test_item` | Removed after Foundation | Proved item registration, language, model, texture, `/give`, persistence, and recipe-viewer indexing | Removal condition satisfied by the DEV-validated canonical Copper family |
 
-The Foundation smoke-test item was retired once the Copper family supplied equivalent real-feature smoke coverage.
+The Foundation smoke-test item was retired once the Copper family supplied equivalent real-feature smoke coverage. DEV runtime validation on 2026-10-08 confirmed the ID and EMI entry are gone, the existing test world still loads, and canonical Copper items remain healthy.
 
 ## Copper — canonical registry
 

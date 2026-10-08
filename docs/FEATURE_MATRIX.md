@@ -5,7 +5,7 @@ The audited Matcha feature matrix remains the source reference for later KEEP / 
 | Feature | Decision | Status / notes |
 | --- | --- | --- |
 | Clean mod architecture | KEEP | Implemented and validated as Foundation `0.1.0-alpha`. |
-| Temporary smoke-test item | DROP AFTER FOUNDATION | `wtfim:test_item` retired after the real Copper family passed registration, resource, persistence, EMI, manufacturing, and quality smoke coverage. |
+| Temporary smoke-test item | DROP AFTER FOUNDATION | `wtfim:test_item` retired after the real Copper family passed registration, resource, persistence, EMI, manufacturing, and quality smoke coverage. Removal was DEV runtime-validated on 2026-10-08 with no Copper regression. |
 | Copper standard equipment family | KEEP / CHANGE | Ten canonical `wtfim:copper_*` items are registered and DEV presentation-validated. Standard Overgeared manufacturing redirects for five tools + four armor pieces and dedicated Copper Shears forging are DEV runtime-validated. Finished-Copper villager trade suppression and Copper recycling are DEV runtime-validated; EMI cleanup and progression teaching remain incomplete. |
 | Copper direct shaped equipment recipes | DROP | Not implemented; would bypass Overgeared craftsmanship. |
 | Copper mining gate | CHANGE | `wtfim:incorrect_for_copper_tool` includes vanilla Iron/Diamond requirements plus optional `#overgeared:needs_steel_tool`. DEV runtime validation confirms Iron Ore remains harvestable while Diamond Ore and Obsidian do not drop correctly, and Poor/Well/Expert/Perfect/Master qualities do not bypass the gate. |
