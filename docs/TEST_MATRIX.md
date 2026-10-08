@@ -127,14 +127,14 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 - [x] Copper Shears durability = 300. (Operator runtime validation, 2026-10-07.)
 - [x] Copper Shears perform shearing behavior. Vanilla comparison was acceptable to the operator; no speed change is required.
 - [x] Copper repair uses Copper Ingots for a standard tool, Copper armor, and Copper Shears. (Operator anvil validation, 2026-10-07.)
-- [ ] Helmet = armor 2 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
-- [ ] Chestplate = armor 4 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
-- [ ] Leggings = armor 3 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
-- [ ] Boots = armor 1 / durability 200. **Durability 200 runtime-validated; individual armor value not separately measured.**
+- [x] Helmet = armor 2 / durability 200. (Armor value runtime-validated via `minecraft:generic.armor`; durability 200 already validated.)
+- [x] Chestplate = armor 4 / durability 200. (Armor value runtime-validated via `minecraft:generic.armor`; durability 200 already validated.)
+- [x] Leggings = armor 3 / durability 200. (Armor value runtime-validated via `minecraft:generic.armor`; durability 200 already validated.)
+- [x] Boots = armor 1 / durability 200. (Armor value runtime-validated via `minecraft:generic.armor`; durability 200 already validated.)
 - [ ] Armor enchantability = 8.
-- [ ] Armor toughness = 0.
-- [ ] Armor knockback resistance = 0.
-- [ ] No unintended fire resistance/special behavior.
+- [x] Armor toughness = 0. (Operator runtime validation via `minecraft:generic.armor_toughness`, 2026-10-08.)
+- [x] Armor knockback resistance = 0. (Operator runtime validation via `minecraft:generic.knockback_resistance`, 2026-10-08.)
+- [x] No unintended fire resistance/special behavior. A canonical Copper armor item burned normally in lava. (Operator runtime validation, 2026-10-08.)
 
 #### Mining progression
 
