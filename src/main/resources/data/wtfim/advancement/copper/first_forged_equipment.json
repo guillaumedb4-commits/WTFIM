@@ -1,0 +1,134 @@
+{
+  "display": {
+    "icon": {
+      "id": "wtfim:copper_pickaxe"
+    },
+    "title": {
+      "translate": "advancement.wtfim.copper.first_forged_equipment.title"
+    },
+    "description": {
+      "translate": "advancement.wtfim.copper.first_forged_equipment.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "overgeared:making_anvil",
+  "criteria": {
+    "copper_sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_sword"
+          }
+        ]
+      }
+    },
+    "copper_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_axe"
+          }
+        ]
+      }
+    },
+    "copper_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_pickaxe"
+          }
+        ]
+      }
+    },
+    "copper_shovel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_shovel"
+          }
+        ]
+      }
+    },
+    "copper_hoe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_hoe"
+          }
+        ]
+      }
+    },
+    "copper_shears": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_shears"
+          }
+        ]
+      }
+    },
+    "copper_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_helmet"
+          }
+        ]
+      }
+    },
+    "copper_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_chestplate"
+          }
+        ]
+      }
+    },
+    "copper_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_leggings"
+          }
+        ]
+      }
+    },
+    "copper_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "wtfim:copper_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "copper_sword",
+      "copper_axe",
+      "copper_pickaxe",
+      "copper_shovel",
+      "copper_hoe",
+      "copper_shears",
+      "copper_helmet",
+      "copper_chestplate",
+      "copper_leggings",
+      "copper_boots"
+    ]
+  ]
+}

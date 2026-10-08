@@ -349,14 +349,17 @@ Exact-source findings:
 - Overgeared's `overgeared:forging_quality` criterion filters forging quality only; it does not constrain the result to Copper equipment, so it is not suitable for a Copper-specific advancement.
 - No direct evidence was found in the exact Overgeared 1.6.19 classes that its custom forging station fires vanilla `minecraft:recipe_crafted` for forged armor/Shears. Using `recipe_crafted` would therefore not provide one reliable trigger across all ten canonical WTFIM Copper items.
 
-Recommended design, pending explicit acceptance:
+Accepted design — explicit operator approval 2026-10-08:
 
 - advancement ID: `wtfim:copper/first_forged_equipment`;
 - parent: `overgeared:making_anvil`, because it is the common prerequisite for both blueprint-based standard gear and blueprint-free Copper Shears;
 - completion: obtain any one of the ten canonical `wtfim:copper_*` equipment items, using `minecraft:inventory_changed` with OR criteria;
 - frame: task; toast/chat enabled; no gameplay reward;
 - icon: `wtfim:copper_pickaxe`;
-- teaching text should state that Copper equipment comes from the forge/Overgeared workflow rather than direct grid crafting.
+- title: `Forged in Copper`;
+- description: `Forge your first piece of Copper equipment through Overgeared craftsmanship.`
+
+**Implemented in source — runtime validation pending.** The advancement is data-driven under `data/wtfim/advancement/copper/first_forged_equipment.json`, uses ten `minecraft:inventory_changed` criteria joined by one OR requirement group, and introduces no custom trigger or direct Overgeared Java coupling.
 
 Tradeoff: an inventory-based criterion proves acquisition rather than the physical forge action itself. In the accepted Copper slice this is acceptable because ordinary alternate acquisition routes to canonical Copper equipment have been explicitly removed/audited. A custom cross-mod forge trigger would be more exact but would add unnecessary implementation coupling for a tutorial advancement.
 

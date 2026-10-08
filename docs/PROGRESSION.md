@@ -76,6 +76,10 @@ The standard manufacturing redirects retain Overgeared's custom `crafting_shapel
 
 Copper Shears are the exception: they are forged through Overgeared infrastructure but intentionally not quality-bearing. DEV runtime validation on 2026-10-07 confirmed no forging quality is attached.
 
+### Progression teaching
+
+The accepted Copper tutorial advancement is `wtfim:copper/first_forged_equipment`. It is parented to `overgeared:making_anvil` and completes when the player obtains any one of the ten canonical `wtfim:copper_*` equipment items. The trigger uses vanilla `minecraft:inventory_changed`; this deliberately teaches acquisition of canonical forged Copper without adding a custom WTFIM↔Overgeared trigger. The advancement title is `Forged in Copper`, it grants no gameplay reward, and it does not introduce Shakudo/Hepatizon. Source implementation is complete; DEV runtime validation is pending.
+
 ### Future branches
 
 Shakudo and Hepatizon will later use the canonical WTFIM Copper equipment as their bases.

@@ -8,5 +8,7 @@
   "item.wtfim.copper_helmet": "Copper Helmet",
   "item.wtfim.copper_chestplate": "Copper Chestplate",
   "item.wtfim.copper_leggings": "Copper Leggings",
-  "item.wtfim.copper_boots": "Copper Boots"
+  "item.wtfim.copper_boots": "Copper Boots",
+  "advancement.wtfim.copper.first_forged_equipment.title": "Forged in Copper",
+  "advancement.wtfim.copper.first_forged_equipment.description": "Forge your first piece of Copper equipment through Overgeared craftsmanship."
 }
