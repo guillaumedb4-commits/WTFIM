@@ -4,7 +4,9 @@
 
 | ID | Status | Purpose | Removal condition |
 | --- | --- | --- | --- |
-| `wtfim:test_item` | Temporary | Proves item registration, language, model, texture, `/give`, persistence, and recipe-viewer indexing | Remove after the real Copper registrations pass runtime/resource validation and provide equivalent smoke coverage |
+| `wtfim:test_item` | Removed after Foundation | Proved item registration, language, model, texture, `/give`, persistence, and recipe-viewer indexing | Removal condition satisfied by the DEV-validated canonical Copper family |
+
+The Foundation smoke-test item was retired once the Copper family supplied equivalent real-feature smoke coverage.
 
 ## Copper — canonical registry
 

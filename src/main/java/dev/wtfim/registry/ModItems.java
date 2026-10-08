@@ -17,11 +17,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(WTFIM.MOD_ID);
 
-    public static final DeferredItem<Item> TEST_ITEM = ITEMS.register(
-            "test_item",
-            () -> new Item(new Item.Properties())
-    );
-
     public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register(
             "copper_sword",
             () -> new SwordItem(

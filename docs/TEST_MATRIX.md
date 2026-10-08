@@ -22,8 +22,7 @@ These checks are preflight only. They do **not** replace the Gradle build or Neo
 - [ ] JAR contains `dev/wtfim/registry/ModItems.class`.
 - [ ] JAR contains `META-INF/neoforge.mods.toml`.
 - [ ] JAR contains `assets/wtfim/lang/en_us.json`.
-- [ ] JAR contains `assets/wtfim/models/item/test_item.json`.
-- [ ] JAR contains `assets/wtfim/textures/item/test_item.png`.
+- [x] Foundation test-item model/texture were runtime-validated before retirement. Current Copper builds intentionally no longer contain `test_item` assets.
 
 ### WTFIM-DEV runtime
 
@@ -80,7 +79,7 @@ These are recorded as **external baseline noise**, not as Foundation failures. D
 - [x] Source defines Copper Shears at 300 durability with explicit Copper-Ingot repair.
 - [x] Source defines `wtfim:incorrect_for_copper_tool` with the accepted Iron/Diamond/Overgeared-Steel boundaries.
 - [x] No Copper manufacturing/acquisition recipes were added in the registration commit.
-- [x] `wtfim:test_item` is intentionally retained until real Copper runtime/resource smoke coverage passes.
+- [x] `wtfim:test_item` removal condition is satisfied by the DEV-validated real Copper registration/resource smoke coverage; the temporary item is retired in the Copper cleanup boundary.
 
 Registration validation completed in WTFIM-DEV on 2026-10-06. The build passed, all ten IDs resolved, armor equipped, Copper Shears sheared successfully, items persisted across save/reload, and the game did not crash. The uploaded log shows WTFIM initialized and only the expected missing Copper asset warnings for WTFIM at this stage.
 
@@ -105,7 +104,7 @@ Presentation/runtime smoke validation passed in WTFIM-DEV on 2026-10-06: Copper 
 - [x] All ten canonical `wtfim:copper_*` IDs register at runtime. (`/give` verified for all ten in WTFIM-DEV, 2026-10-06.)
 - [x] No unintended WTFIM Copper IDs observed during registration validation.
 - [x] Source declares Overgeared `1.21.1-1.6.19+` as required/BOTH and orders WTFIM AFTER Overgeared. Runtime metadata/version-range validation remains part of the next DEV test.
-- [ ] `wtfim:test_item` removal/retention is intentional and documented at each boundary.
+- [x] `wtfim:test_item` is intentionally retired after real Copper registration/resource/persistence/EMI smoke coverage replaced the Foundation probe item.
 
 #### Assets / language
 
