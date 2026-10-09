@@ -171,3 +171,35 @@ Finished Overgeared Copper offers are **removed**, not replaced with WTFIM finis
 ### Runtime validation — 2026-10-07
 
 The corrected explicit LOWEST-priority listener was exercised in WTFIM-DEV. Diagnostics confirmed that WTFIM wrapped the Armorer, Toolsmith, and Weaponsmith trade pools and suppressed generated finished Copper offers in each relevant profession path, including `overgeared:copper_sword`, `overgeared:copper_axe`, `overgeared:copper_pickaxe`, `overgeared:copper_leggings`, and `overgeared:copper_boots`. No finished Overgeared Copper offer leaked during the focused pass, while useful Copper head trades had already been observed. ADR-004's implementation is therefore runtime-validated.
+
+
+## Pending product decision — Copper release version
+
+**Status:** Decision required after Copper validation — 2026-10-09
+
+### Context
+
+The Copper vertical slice has passed both consolidated WTFIM-DEV validation and real-modpack WTFIM-INTEGRATION validation. Project workflow requires each stable vertical slice to receive a version/tag, but the permanent docs do not yet define the Copper release version.
+
+Foundation remains `0.1.0-alpha` / `v0.1.0-alpha`. The current Copper branch still reports `mod_version=0.1.0-alpha`, so release metadata must not be changed until a distinct Copper version is explicitly accepted.
+
+### Recommendation
+
+Use **`0.2.0-alpha`** with tag **`v0.2.0-alpha`**.
+
+Rationale:
+
+- Copper is the first substantial gameplay vertical slice after Foundation rather than a Foundation bugfix.
+- A pre-1.0 minor bump communicates a new gameplay capability more clearly than `0.1.1-alpha`.
+- Retaining the `-alpha` suffix preserves the current project maturity signal.
+- The version is distinct from the Foundation artifact/tag, avoiding two materially different builds sharing `0.1.0-alpha`.
+
+### Alternatives
+
+- **`0.1.1-alpha`**: smaller bump, but reads as a patch/fix release and understates the addition of the complete Copper progression slice.
+- **`0.2.0`** without `-alpha`: cleaner SemVer, but would imply a maturity change not otherwise accepted in project docs.
+- **Keep `0.1.0-alpha`**: rejected as a recommendation because Foundation and Copper would share the same release identity despite materially different gameplay content.
+
+### Decision boundary
+
+Do not change `mod_version`, artifact naming, README release version, or create/push a Copper tag until the operator explicitly accepts a release version. Do not begin Shakudo, Hepatizon, or another vertical slice as part of this decision.
