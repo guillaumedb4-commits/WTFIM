@@ -250,7 +250,7 @@ Runtime checks:
 - [x] Trade-suppression cleanup build/runtime check: temporary INFO diagnostics removed without changing finished-Copper suppression behavior. Operator revalidated high-level smithing-profession offers through Master-tier testing; finished `overgeared:copper_*` gear remained blocked, useful intermediates remained available, and `latest.log` contained no former WTFIM trade-filter diagnostics. (Operator/runtime log validation, 2026-10-09.)
 - [x] Clean WTFIM-DEV full Copper slice passes. Consolidated operator validation on 2026-10-09 passed clean build, boot/world load, EMI, canonical manufacturing, quality/creator transfer, Copper Shears behavior, mining gates, recycling, villager-trade suppression, progression advancement, save/reload persistence, and logs with only the documented Overgeared/EMI baseline noise.
 - [x] WTFIM-INTEGRATION real modpack passes. Operator validation on 2026-10-09 passed boot/world load, Copper items/assets, EMI/progression routes, Overgeared manufacturing, quality/creator transfer, duplicate/trade suppression, advancement behavior, and save/reload. Integration `latest.log` contains no WARN/ERROR attributable to WTFIM or a WTFIM<->Overgeared interaction; remaining noise is external pack/mod interaction noise, including the known Overgeared EMI `flint_knapping` issue, EMI persistent-data parse errors, Copycats<->EMI client task exceptions, and EMF warnings/errors on legacy registered Overgeared Copper armor models.
-- [x] No Copper version tag was created before both environments passed. Both validation environments are now green; release version/tag selection remains a separate product decision before version metadata or tag creation.
+- [x] No Copper version tag was created before both environments passed. Both validation environments are green; release identity was subsequently accepted as `0.2.0-alpha` / `v0.2.0-alpha` under ADR-005.
 
 
 ## 0.2.0-alpha — Copper release closeout
@@ -261,9 +261,9 @@ Release identity accepted on 2026-10-09 under ADR-005.
 - [x] Copper real-modpack integration validation passes.
 - [x] Release version accepted as `0.2.0-alpha`; intended tag is `v0.2.0-alpha`.
 - [x] Source/release metadata updated to `0.2.0-alpha`.
-- [ ] Clean release-candidate build produces `build/libs/wtfim-0.2.0-alpha.jar`.
-- [ ] Release-candidate JAR metadata reports WTFIM version `0.2.0-alpha`.
-- [ ] Release-candidate JAR contains the expected WTFIM entrypoint, registry class, mod metadata, language file, Copper advancement, Copper recipes, and Copper assets.
+- [x] Clean release-candidate build produces `build/libs/wtfim-0.2.0-alpha.jar`. (Operator validation, 2026-10-09.)
+- [x] Release-candidate JAR metadata reports WTFIM version `0.2.0-alpha` and retains required Overgeared dependency metadata. (Operator artifact inspection, 2026-10-09.)
+- [x] Release-candidate JAR contains the expected WTFIM entrypoint, registry class, mod metadata, language file, Copper advancement, Copper recipes, and Copper assets. The eight targeted artifact entries were present. (Operator artifact inspection, 2026-10-09.)
 - [ ] Create `v0.2.0-alpha` only after the release-candidate checks above pass.
 
 ## Failure triage rule

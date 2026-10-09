@@ -26,4 +26,4 @@ Expected artifact:
 build/libs/wtfim-0.2.0-alpha.jar
 ```
 
-Foundation validation passed on 2026-10-06 and remains the `v0.1.0-alpha` baseline. Copper passed DEV and real-modpack integration validation on 2026-10-09; `v0.2.0-alpha` is the accepted Copper release identity pending final release-candidate artifact validation and tag creation. See `docs/TEST_MATRIX.md` for recorded evidence.
+Foundation validation passed on 2026-10-06 and remains the `v0.1.0-alpha` baseline. Copper passed DEV, real-modpack integration, and final `0.2.0-alpha` release-candidate artifact validation on 2026-10-09. `v0.2.0-alpha` is the accepted Copper release tag and is the only remaining closeout action. See `docs/TEST_MATRIX.md` for recorded evidence.
