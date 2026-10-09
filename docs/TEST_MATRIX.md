@@ -18,10 +18,10 @@ These checks are preflight only. They do **not** replace the Gradle build or Neo
 
 - [x] `./gradlew build` succeeds. (Runtime operator validation, 2026-10-06)
 - [x] `build/libs/wtfim-0.1.0-alpha.jar` exists. (Confirmed by `Get-ChildItem .\build\libs\`)
-- [ ] JAR contains `dev/wtfim/WTFIM.class`.
-- [ ] JAR contains `dev/wtfim/registry/ModItems.class`.
-- [ ] JAR contains `META-INF/neoforge.mods.toml`.
-- [ ] JAR contains `assets/wtfim/lang/en_us.json`.
+- [x] JAR contains `dev/wtfim/WTFIM.class`. (Operator artifact inspection of the deployed WTFIM-DEV JAR, 2026-10-09.)
+- [x] JAR contains `dev/wtfim/registry/ModItems.class`. (Operator artifact inspection of the deployed WTFIM-DEV JAR, 2026-10-09.)
+- [x] JAR contains `META-INF/neoforge.mods.toml`. (Operator artifact inspection of the deployed WTFIM-DEV JAR, 2026-10-09.)
+- [x] JAR contains `assets/wtfim/lang/en_us.json`. (Operator artifact inspection of the deployed WTFIM-DEV JAR, 2026-10-09.)
 - [x] Foundation test-item model/texture were runtime-validated before retirement. Current Copper builds intentionally no longer contain `test_item` assets.
 
 ### WTFIM-DEV runtime
