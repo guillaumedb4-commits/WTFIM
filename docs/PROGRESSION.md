@@ -25,7 +25,7 @@ Additional accepted rules:
 
 ## Copper vertical slice
 
-Copper implementation has begun.
+Copper implementation is complete for the accepted vertical-slice scope and passed both WTFIM-DEV and real-modpack WTFIM-INTEGRATION validation on 2026-10-09.
 
 The canonical ten-item Copper equipment family, Copper tool tier, Copper armor material, repairable Copper Shears, and Copper incorrect-block tag are now defined in source.
 

@@ -152,7 +152,7 @@ Overgeared Universal is not part of the Copper integration.
 
 ### Runtime validation required
 
-The nine standard Copper recipe redirects and required dependency metadata are DEV runtime-validated. A consolidated clean WTFIM-DEV Copper pass also succeeded on 2026-10-09. Copper now has only the real-modpack integration gate remaining:
+The nine standard Copper recipe redirects and required dependency metadata are runtime-validated. A consolidated clean WTFIM-DEV Copper pass and a real-modpack WTFIM-INTEGRATION pass both succeeded on 2026-10-09. The integration log contains no WARN/ERROR attributable to WTFIM or a WTFIM<->Overgeared interaction. External pack noise observed during the successful pass includes the known Overgeared EMI `flint_knapping` category error, EMI persistent-data parse errors, Copycats<->EMI `UnsupportedOperationException` client tasks, and EMF model-churn errors on the still-registered legacy `overgeared:copper_helmet` and `overgeared:copper_leggings`. These did not alter the accepted Copper gameplay checks:
 
 - WTFIM outputs appear in Overgeared manufacturing;
 - tool quality data survives standard assembly and save/reload — DEV runtime-validated 2026-10-07;
@@ -171,4 +171,4 @@ See `COPPER_AUDIT.md`.
 
 ## Current manufacturing boundary
 
-The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging behavior is DEV runtime-validated as its own boundary. Finished-Copper villager trade suppression is DEV runtime-validated under ADR-004. Recipe-viewer hiding, the Copper progression advancement, and Copper recycling are also DEV runtime-validated. The remaining Copper gates are the consolidated clean DEV pass followed by the real-modpack integration pass.
+The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces, then Copper Shears, trade suppression, recipe-viewer hiding, progression teaching, recycling, and the remaining behavior checks were closed as separate boundaries. The complete Copper slice passed both clean WTFIM-DEV and real-modpack WTFIM-INTEGRATION validation on 2026-10-09. No later material is authorized by this closeout.

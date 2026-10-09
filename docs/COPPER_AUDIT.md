@@ -367,4 +367,4 @@ Tradeoff: an inventory-based criterion proves acquisition rather than the physic
 
 This audit does **not** authorize implementation of Shakudo, Hepatizon, Steel, Diamond, Electrum, Adamant, Estus, mobs, Sack, or later progression systems.
 
-Copper implementation starts only after this accepted documentation commit.
+Copper implementation subsequently completed as a vertical slice and passed both consolidated WTFIM-DEV and real-modpack WTFIM-INTEGRATION validation on 2026-10-09. This closeout does not authorize implementation of any later material or system.
