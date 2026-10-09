@@ -4,13 +4,13 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="wtfim"
-version="0.1.0-alpha"
+version="0.2.0-alpha"
 displayName="What the Fuck Is Matcha?"
 authors="WTFIM Project"
 description='''
 A clean NeoForge rebuild inspired by Matcha Flavoured, designed around explicit progression and Overgeared compatibility.
 
-The Copper vertical slice is in active development on top of the validated 0.1.0-alpha Foundation.
+The Copper vertical slice is validated on top of the 0.1.0-alpha Foundation, with Overgeared providing the canonical craftsmanship path.
 '''
 
 [[dependencies.wtfim]]
