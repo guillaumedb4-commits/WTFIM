@@ -247,6 +247,7 @@ Runtime checks:
 - [x] Copper items survive save/reload. (Operator validation, 2026-10-06.)
 - [x] Forging quality and its applied effects survive save/reload on canonical WTFIM Copper tools; item identity remains `wtfim:copper_pickaxe`. (Operator runtime validation, 2026-10-07.)
 - [x] No new WTFIM/Copper manufacturing errors in `latest.log`; WTFIM + Overgeared + EMI load and EMI completes reload. Known Overgeared diamond recipe noise and stale EMI persistent-data errors remain external/baseline cleanup items.
+- [ ] Trade-suppression cleanup build/runtime check: temporary INFO diagnostics removed without changing finished-Copper suppression behavior. **Source cleanup implemented; validation pending.**
 - [ ] Clean WTFIM-DEV full Copper slice passes. Standard manufacturing, Copper Shears behavior, villager-trade suppression, Copper recycling, and Copper mining-gate boundaries passed; cleanup and remaining behavior checks remain.
 - [ ] WTFIM-INTEGRATION real modpack passes.
 - [ ] No Copper version tag is created before both environments pass.
