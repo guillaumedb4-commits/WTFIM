@@ -2,9 +2,9 @@
 
 **What the Fuck Is Matcha?** is a clean Minecraft 1.21.1 / NeoForge rebuild inspired by Matcha Flavoured and designed to integrate deliberately with Overgeared.
 
-Current version: **0.1.0-alpha**. Development branch `feature/copper` is building the first gameplay vertical slice.
+Current version: **0.2.0-alpha**. Development branch `feature/copper` contains the validated Copper gameplay vertical slice and is in release closeout.
 
-Foundation is validated and retained as the baseline. On `feature/copper`, the canonical ten-item Copper equipment family is registered and registration-validated; its self-contained models, textures, language, and standard item tags are now implemented. Copper manufacturing/progression integration is still incomplete. Steel, Shakudo, Hepatizon, Electrum, Adamant, mobs, and legacy migration remain unimplemented.
+Foundation is validated and retained as the baseline. Copper is the first completed gameplay vertical slice: the canonical ten-item Copper equipment family, Overgeared manufacturing integration, quality/creator behavior, mining gates, recycling, duplicate-route suppression, EMI discoverability, progression advancement, persistence, and real-modpack integration have passed validation. Steel, Shakudo, Hepatizon, Electrum, Adamant, mobs, and legacy migration remain unimplemented.
 
 ## Build target
 
@@ -23,7 +23,7 @@ Foundation is validated and retained as the baseline. On `feature/copper`, the c
 Expected artifact:
 
 ```text
-build/libs/wtfim-0.1.0-alpha.jar
+build/libs/wtfim-0.2.0-alpha.jar
 ```
 
-Foundation validation passed on 2026-10-06. The local baseline is tagged `v0.1.0-alpha`; see `docs/TEST_MATRIX.md` for the recorded validation evidence.
+Foundation validation passed on 2026-10-06 and remains the `v0.1.0-alpha` baseline. Copper passed DEV and real-modpack integration validation on 2026-10-09; `v0.2.0-alpha` is the accepted Copper release identity pending final release-candidate artifact validation and tag creation. See `docs/TEST_MATRIX.md` for recorded evidence.

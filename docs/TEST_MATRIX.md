@@ -252,6 +252,20 @@ Runtime checks:
 - [x] WTFIM-INTEGRATION real modpack passes. Operator validation on 2026-10-09 passed boot/world load, Copper items/assets, EMI/progression routes, Overgeared manufacturing, quality/creator transfer, duplicate/trade suppression, advancement behavior, and save/reload. Integration `latest.log` contains no WARN/ERROR attributable to WTFIM or a WTFIM<->Overgeared interaction; remaining noise is external pack/mod interaction noise, including the known Overgeared EMI `flint_knapping` issue, EMI persistent-data parse errors, Copycats<->EMI client task exceptions, and EMF warnings/errors on legacy registered Overgeared Copper armor models.
 - [x] No Copper version tag was created before both environments passed. Both validation environments are now green; release version/tag selection remains a separate product decision before version metadata or tag creation.
 
+
+## 0.2.0-alpha — Copper release closeout
+
+Release identity accepted on 2026-10-09 under ADR-005.
+
+- [x] Copper DEV validation passes.
+- [x] Copper real-modpack integration validation passes.
+- [x] Release version accepted as `0.2.0-alpha`; intended tag is `v0.2.0-alpha`.
+- [x] Source/release metadata updated to `0.2.0-alpha`.
+- [ ] Clean release-candidate build produces `build/libs/wtfim-0.2.0-alpha.jar`.
+- [ ] Release-candidate JAR metadata reports WTFIM version `0.2.0-alpha`.
+- [ ] Release-candidate JAR contains the expected WTFIM entrypoint, registry class, mod metadata, language file, Copper advancement, Copper recipes, and Copper assets.
+- [ ] Create `v0.2.0-alpha` only after the release-candidate checks above pass.
+
 ## Failure triage rule
 
 For crashes, inspect `latest.log` and/or the crash report and identify the first meaningful `Caused by:`. Record verified causes separately from inference; do not patch from the final surface error alone.

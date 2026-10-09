@@ -173,9 +173,9 @@ Finished Overgeared Copper offers are **removed**, not replaced with WTFIM finis
 The corrected explicit LOWEST-priority listener was exercised in WTFIM-DEV. Diagnostics confirmed that WTFIM wrapped the Armorer, Toolsmith, and Weaponsmith trade pools and suppressed generated finished Copper offers in each relevant profession path, including `overgeared:copper_sword`, `overgeared:copper_axe`, `overgeared:copper_pickaxe`, `overgeared:copper_leggings`, and `overgeared:copper_boots`. No finished Overgeared Copper offer leaked during the focused pass, while useful Copper head trades had already been observed. ADR-004's implementation is therefore runtime-validated.
 
 
-## Pending product decision — Copper release version
+## ADR-005 — Copper release version
 
-**Status:** Decision required after Copper validation — 2026-10-09
+**Status:** Accepted — 2026-10-09
 
 ### Context
 
@@ -183,7 +183,7 @@ The Copper vertical slice has passed both consolidated WTFIM-DEV validation and 
 
 Foundation remains `0.1.0-alpha` / `v0.1.0-alpha`. The current Copper branch still reports `mod_version=0.1.0-alpha`, so release metadata must not be changed until a distinct Copper version is explicitly accepted.
 
-### Recommendation
+### Decision
 
 Use **`0.2.0-alpha`** with tag **`v0.2.0-alpha`**.
 
@@ -200,6 +200,10 @@ Rationale:
 - **`0.2.0`** without `-alpha`: cleaner SemVer, but would imply a maturity change not otherwise accepted in project docs.
 - **Keep `0.1.0-alpha`**: rejected as a recommendation because Foundation and Copper would share the same release identity despite materially different gameplay content.
 
-### Decision boundary
+### Consequences
 
-Do not change `mod_version`, artifact naming, README release version, or create/push a Copper tag until the operator explicitly accepts a release version. Do not begin Shakudo, Hepatizon, or another vertical slice as part of this decision.
+- `mod_version` and release-facing README metadata advance to `0.2.0-alpha`.
+- The expected release artifact is `wtfim-0.2.0-alpha.jar`.
+- The Copper release tag will be `v0.2.0-alpha`, but it must not be created until the versioned release-candidate artifact passes a final build/content check.
+- Foundation remains identifiable as `v0.1.0-alpha`.
+- Do not begin Shakudo, Hepatizon, or another vertical slice as part of Copper release closeout.
