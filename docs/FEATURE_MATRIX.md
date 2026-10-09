@@ -30,4 +30,4 @@ See:
 - `docs/DESIGN_DECISIONS.md` ADR-003
 - `docs/OVERGEARED_COMPAT.md`
 
-Copper implementation proceeded in small commits and passed both the consolidated clean WTFIM-DEV validation and the real-modpack WTFIM-INTEGRATION validation on 2026-10-09. Registration/presentation, manufacturing, Copper Shears, quality/creator transfer, mining gates, recycling, duplicate-route suppression, EMI discoverability, progression teaching, persistence, and integration behavior are validated. The Copper vertical slice is implementation-complete; release/tag closeout is now the remaining project-management step.
+Copper implementation proceeded in small commits and passed both consolidated WTFIM-DEV validation and real-modpack WTFIM-INTEGRATION validation on 2026-10-09. Registration/presentation, manufacturing, Copper Shears, quality/creator transfer, mining gates, recycling, duplicate-route suppression, EMI discoverability, progression teaching, persistence, and integration behavior are validated. The Copper vertical slice is released as `v0.2.0-alpha`.

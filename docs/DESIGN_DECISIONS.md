@@ -204,6 +204,6 @@ Rationale:
 
 - `mod_version` and release-facing README metadata advance to `0.2.0-alpha`.
 - The expected release artifact is `wtfim-0.2.0-alpha.jar`.
-- The Copper release tag will be `v0.2.0-alpha`, but it must not be created until the versioned release-candidate artifact passes a final build/content check.
+- The Copper release tag is `v0.2.0-alpha`; it was created only after the versioned release-candidate artifact passed the final build/content check and resolves to release commit `e96fdfa0f423abfd8db574e9bcd32ab59ff4400e`.
 - Foundation remains identifiable as `v0.1.0-alpha`.
 - Do not begin Shakudo, Hepatizon, or another vertical slice as part of Copper release closeout.

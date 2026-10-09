@@ -264,7 +264,7 @@ Release identity accepted on 2026-10-09 under ADR-005.
 - [x] Clean release-candidate build produces `build/libs/wtfim-0.2.0-alpha.jar`. (Operator validation, 2026-10-09.)
 - [x] Release-candidate JAR metadata reports WTFIM version `0.2.0-alpha` and retains required Overgeared dependency metadata. (Operator artifact inspection, 2026-10-09.)
 - [x] Release-candidate JAR contains the expected WTFIM entrypoint, registry class, mod metadata, language file, Copper advancement, Copper recipes, and Copper assets. The eight targeted artifact entries were present. (Operator artifact inspection, 2026-10-09.)
-- [ ] Create `v0.2.0-alpha` only after the release-candidate checks above pass.
+- [x] `v0.2.0-alpha` created after release-candidate validation and remote-verified. The annotated tag object resolves to release commit `e96fdfa0f423abfd8db574e9bcd32ab59ff4400e`. (Operator/GitHub verification, 2026-10-09.)
 
 ## Failure triage rule
 
