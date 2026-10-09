@@ -231,7 +231,7 @@ Runtime checks:
 - [x] Canonical WTFIM Copper equipment recycles to one `overgeared:copper_nugget` in a blast furnace. (Operator runtime validation, 2026-10-07.)
 - [x] Copper Shears recycle correctly through both furnace types. (Operator runtime validation, 2026-10-07.)
 - [x] No one-Ingot Matcha-style Copper equipment recycling remains. (Operator runtime validation, 2026-10-07.)
-- [ ] Recycling cannot create a material duplication exploit.
+- [x] Recycling cannot create a material duplication exploit. Operator economy-loop validation confirmed Copper Nugget conversions are not profitable, the cheapest canonical Copper equipment costs more Copper than the one-nugget recycle return, and a full forge -> recycle loop loses material. (Operator validation, 2026-10-09.)
 
 #### EMI / discoverability
 

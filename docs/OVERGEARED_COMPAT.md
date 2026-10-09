@@ -138,7 +138,7 @@ Canonical WTFIM Copper equipment recycles through the Overgeared Copper economy 
 
 Because Overgeared has no Copper Shears, WTFIM adds matching `wtfim:` smelting and blasting recipes for `wtfim:copper_shears` with the same one-nugget result, XP, and timings. Matcha's one-full-ingot recycling is not reproduced.
 
-The operator validated all ten canonical Copper items in both furnace types: each path returned exactly one `overgeared:copper_nugget`, Copper Shears worked in furnace and blast furnace, and no full-Copper-Ingot recycling path appeared. The broader material-loop duplication audit remains separate.
+The operator validated all ten canonical Copper items in both furnace types: each path returned exactly one `overgeared:copper_nugget`, Copper Shears worked in furnace and blast furnace, and no full-Copper-Ingot recycling path appeared. Focused economy-loop validation on 2026-10-09 then confirmed Copper Nugget conversions expose no profitable shortcut, the cheapest canonical Copper equipment costs more Copper than the fixed one-nugget recycle return, and a full forge -> recycle cycle is materially lossy. The Copper recycling duplication check is therefore closed.
 
 ### Dependency transition
 
