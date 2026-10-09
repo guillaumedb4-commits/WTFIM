@@ -76,7 +76,7 @@ wtfim:copper_boots
 
 Copper Shears have no native Overgeared equivalent. WTFIM implements the accepted design as a dedicated `wtfim:copper_shears` forging recipe: two `overgeared:heated_copper_ingot`, Stone-tier forging, three hammering actions, no blueprint, no quenching, no polishing, and explicit `has_quality: false`. Runtime testing exposed that the original diagonal matched Overgeared's `copper_hammer_head` recipe exactly. The Shears pattern is therefore the opposite diagonal (`" #"`, `"# "`), matching Overgeared's vanilla Iron Shears visual convention while remaining distinct because Overgeared's forging matcher does not mirror patterns. Polymorph may coexist in the modpack but is not required to disambiguate this canonical path.
 
-**DEV runtime-validated — 2026-10-07.** The operator confirmed both the Copper Hammer Head and Copper Shears can be forged independently with their respective diagonal patterns, and the resulting Copper Shears have no forging quality. This closes the collision/no-quality behavior checks; the separate subjective balance check for whether three hammering actions feels right remains open.
+**DEV runtime-validated — 2026-10-07.** The operator confirmed both the Copper Hammer Head and Copper Shears can be forged independently with their respective diagonal patterns, and the resulting Copper Shears have no forging quality. The separate three-hammering balance target was accepted in gameplay testing on 2026-10-08.
 
 ### Duplicate final Overgeared items
 
@@ -171,4 +171,4 @@ See `COPPER_AUDIT.md`.
 
 ## Current manufacturing boundary
 
-The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging behavior is DEV runtime-validated as its own boundary. Finished-Copper villager trade suppression is DEV runtime-validated under ADR-004. Creative/EMI hiding and advancements remain separate so failures can be isolated. Copper recycling recipes are DEV runtime-validated as their own boundary.
+The first manufacturing commit stopped at the nine standard Matcha/Overgeared-overlap pieces. Copper Shears forging behavior is DEV runtime-validated as its own boundary. Finished-Copper villager trade suppression is DEV runtime-validated under ADR-004. Recipe-viewer hiding, the Copper progression advancement, and Copper recycling are also DEV runtime-validated. The remaining Copper gates are the consolidated clean DEV pass followed by the real-modpack integration pass.
