@@ -152,7 +152,7 @@ Overgeared Universal is not part of the Copper integration.
 
 ### Runtime validation required
 
-The nine standard Copper recipe redirects and required dependency metadata are now DEV runtime-validated. Copper is still not complete until the remaining checks are finished:
+The nine standard Copper recipe redirects and required dependency metadata are DEV runtime-validated. A consolidated clean WTFIM-DEV Copper pass also succeeded on 2026-10-09. Copper now has only the real-modpack integration gate remaining:
 
 - WTFIM outputs appear in Overgeared manufacturing;
 - tool quality data survives standard assembly and save/reload — DEV runtime-validated 2026-10-07;

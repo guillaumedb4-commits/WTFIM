@@ -30,4 +30,4 @@ See:
 - `docs/DESIGN_DECISIONS.md` ADR-003
 - `docs/OVERGEARED_COMPAT.md`
 
-Copper implementation is intentionally proceeding in small commits. Registration/presentation, standard manufacturing, Copper Shears forging behavior, and finished-Copper villager offer suppression are DEV runtime-validated.
+Copper implementation proceeded in small commits and has now passed a consolidated clean WTFIM-DEV validation on 2026-10-09, covering registration/presentation, manufacturing, Copper Shears, quality/creator transfer, mining gates, recycling, duplicate-route suppression, EMI discoverability, progression teaching, persistence, and logs. Real-modpack integration remains the final Copper gate.
